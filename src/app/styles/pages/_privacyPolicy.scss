@@ -1,0 +1,63 @@
+@use "../abstracts" as abs;
+
+.privacyPolicy {
+    .container {
+        .tcp {
+
+            padding: 55px;
+            position: relative;
+
+            @include abs.respond-to(mobile) {
+                padding: 30px;
+            }
+
+            .header-1 {
+                font-size: 40px;
+                color: #263077;
+                @include abs.respond-to(mobile) {
+                    margin-bottom: 0;
+                    font-size: 20px;
+                }
+            }
+
+            .header-2 {
+                font-size: 20px;
+                color: abs.$text-dark;
+                font-weight: 600;
+                line-height: 32px;
+                margin: 30px 0;
+                @include abs.respond-to(mobile) {
+                    font-size: 11px;
+                    margin: 15px 0;
+                }
+            }
+
+            .text {
+                font-size: 14px;
+                color: #536288;
+                @include abs.respond-to(mobile) {
+                    font-size: 11px;
+                }
+            }
+
+            .p-list {
+                list-style: none;
+                padding: 0;
+            }
+
+            .p-image {
+                position: absolute;
+                top: 22%;
+                right: 0;
+                transform: translateY(-50%);
+                img{
+                    @include abs.respond-to(mobile) {
+                        width: 100px;
+                    }
+                }
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,208 @@
+@use "../../abstracts" as abs;
+
+.sidenav {
+    position: relative;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+
+    .MuiButtonBase-root {
+        margin: 0;
+
+        &.Mui-expanded {
+            border-bottom: 2px solid #e5e5e5;
+        }
+
+        @include abs.respond-to(mobile) {
+            margin-top: 20px;
+        }
+    }
+
+    &.css-1elwnq4-MuiPaper-root-MuiAccordion-root {
+        &.Mui-expanded:first-of-type {
+            @include abs.respond-to(mobile) {
+                margin-top: 20px !important;
+            }
+        }
+    }
+
+    .aup {
+        top: auto;
+        position: relative;
+    }
+
+    @include abs.respond-to(mobile) {
+        margin-top: 20px;
+    }
+
+    border-radius: 12px;
+    background: #fff;
+
+    .header {
+        // background: var(--linera, linear-gradient(90deg, #eafeff 0%, #fffbf1 100%));
+        // border-bottom: 2px solid #e5e5e5;
+        color: #263077;
+        text-align: start;
+        font-family: abs.$font-family;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        width: 100%;
+        // padding: 10px 19px 10px 19px;
+    }
+
+    .body {
+        margin-top: 24px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+
+
+        .user_info {
+            display: flex;
+            width: 100%;
+            justify-self: start;
+            gap: 10px;
+
+            .img {
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .name {
+            color: #263077;
+            font-family: abs.$font-family;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 20px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .det {
+            color: abs.$sec-2;
+            font-family: abs.$font-family;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            margin-top: 0px;
+            margin-bottom: 18px;
+
+            span {
+                text-transform: capitalize;
+            }
+
+        }
+
+        .icon-text {
+            display: flex;
+            align-items: center;
+            margin: 0px 0px 10px 0px;
+            width: 100%;
+
+            .icon {
+                border-radius: 10px;
+                border: none;
+                background: #fff0;
+                margin-right: 7px;
+                display: flex;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                justify-content: center;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .txt {
+                color: abs.$text-dark;
+                font-size: 12px;
+                font-weight: 600;
+                font-family: abs.$font-family;
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    color: abs.$text-blue;
+                    font-size: 11px;
+                    font-weight: 500;
+                    margin-bottom: 3px;
+                }
+            }
+        }
+
+        .icon-text-dark {
+            display: flex;
+            align-items: center;
+            margin: 0px 0px 10px 0px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            background: #f4f8ff;
+
+            .icon {
+                border-radius: 10px;
+                border: none;
+                background: #fff0;
+                margin-right: 7px;
+                display: flex;
+                align-items: center;
+                width: 40px;
+                min-width: 40px;
+                height: 40px;
+                justify-content: center;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .txt {
+                color: abs.$warning-color;
+                font-size: 12px;
+                font-weight: 500;
+                font-family: abs.$font-family;
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    color: abs.$primary-color;
+                    font-size: 12px;
+                    font-weight: 500;
+                    margin-bottom: 3px;
+                }
+            }
+        }
+
+        .noofappt {
+            padding: 18px 56px;
+            width: 100%;
+            height: 114px;
+            border-radius: 12px;
+            background: var(--linera,
+                    linear-gradient(90deg, #eafeff 0%, #fffbf1 100%));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            span {
+                color: abs.$primary-color;
+                font-family: abs.$font-family;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                display: block;
+                margin-top: 11px;
+            }
+        }
+    }
+}

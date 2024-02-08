@@ -1,0 +1,67 @@
+@use "../../abstracts" as abs;
+
+.Language_select {
+    padding: 20px;
+
+    .Language_title {
+      font-size: 16px;
+      color: #263077;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      
+      div {
+        transition: all 0.3s ease-in-out;
+        font-weight: 500;
+        transform: rotate(180deg);
+
+        span {
+          cursor: pointer;
+          padding: 10px;
+        }
+      }
+      &.active{
+        div{
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    .Language_box {
+      display: flex;
+      flex-wrap: wrap;
+      transform: scaleY(1);
+      transform-origin: top;
+      max-height: 500px;
+      transition: all 0.3s ease-in-out;
+      margin-top: 10px;
+
+      .Language-option {
+        padding: 6px 15px;
+        margin: 5px;
+        border-radius: 50px;
+        user-select: none;
+        cursor: pointer;
+        background-color: #EEEEEE;
+        color: #8F8F8F;
+
+        label {
+          cursor: pointer;
+        }
+      }
+
+      &.active {
+        max-height: 0px;
+        transform: scaleY(0);
+        transform-origin: top;
+      }
+    }
+    
+
+    .Language-option.selected {
+      background-color: abs.$primary-color;
+      color: #fff;
+    }
+  }

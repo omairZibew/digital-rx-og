@@ -1,0 +1,138 @@
+@use "../../abstracts" as abs;
+
+.small-box-card-parent {
+  margin: 0px 36px;
+  padding: 0px 20px 20px 20px;
+  display: flex;
+  justify-content: center;
+
+  @include abs.respond-to(mobile) {
+    padding: 0px 10px 20px 10px;
+  }
+
+  .small-box-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 12px;
+
+    width: 203px;
+    height: 225px;
+
+    background: #ffffff;
+    /* Shadow 2 */
+
+    box-shadow: abs.$box-shadow-bottom;
+    border-radius: 12px;
+    transition: height 150ms ease-out 10ms;
+
+    .card-img {
+      width: 102px;
+      height: 102px;
+      background: abs.$card-background-color;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
+
+    .card-name {
+      font-family: abs.$font-family;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 150%;
+      /* identical to box height, or 24px */
+
+      display: flex;
+      align-items: center;
+      text-align: center;
+
+      /* Text Color */
+
+      color: abs.$text-dark;
+
+      @include abs.respond-to(mobile) {
+        font-size: 0.875rem;
+      }
+    }
+
+    .card-price {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .act-btn {
+        display: flex;
+        height: 0px;
+        width: 0px;
+        justify-content: center;
+        align-items: center;
+        color: abs.$text-white;
+        padding: 0px;
+        border-radius: 8px;
+        background-color: abs.$primary-color;
+        cursor: pointer;
+        opacity: 0;
+        text-decoration: none;
+        transition: opacity 5ms ease-out 0ms, height 5ms ease-out 0ms;
+
+        font-family: abs.$font-family;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 0.75rem;
+        line-height: 150%;
+        @include abs.respond-to(mobile) {
+          font-size: 0.65rem;
+        }
+      }
+
+      .act-price {
+        font-family: abs.$font-family;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 150%;
+        color: abs.$primary-color;
+        opacity: 1;
+        transition: opacity 5ms ease-out 5ms, height 5ms ease-out 5ms;
+        @include abs.respond-to(mobile) {
+          font-size: 0.75rem;
+        }
+      }
+    }
+
+    &:hover {
+      height: 238px;
+
+      transition: height 150ms ease-out 0ms;
+      .card-price {
+        .act-btn {
+          width: fit-content;
+          opacity: 1;
+          height: 48px;
+          padding: 15px 30px;
+          transition: opacity 3ms ease-out 150ms, height 3ms ease-out 150ms;
+        }
+
+        .act-price {
+          height: 0px;
+          width: 0px;
+          opacity: 0;
+          transition: opacity 0ms ease-out 0ms, height 0ms ease-out 0ms;
+        }
+      }
+    }
+  }
+
+  &:first-child {
+    margin-left: 0px;
+  }
+
+  &:last-child {
+    margin-right: 0px;
+  }
+}

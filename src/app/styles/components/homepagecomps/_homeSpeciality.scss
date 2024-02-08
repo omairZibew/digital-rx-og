@@ -1,0 +1,139 @@
+@use "../../abstracts" as abs;
+
+.homeSpeciality {
+    padding: 53px 0;
+    
+    @include abs.respond-to(mobile) {
+        padding: 25px 0px;
+        padding-bottom: 0;
+    }
+
+    .headerSec {
+
+        .homeSpeciality-title {
+            h2 {
+                font-family: "Manrope", sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 40px;
+                line-height: 120%;
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+                margin-bottom: 32px;
+                color: abs.$text-primary;
+            }
+        }
+    }
+
+    .homeSpeciality-card-parent {
+        .homeSpecialityRow {
+            // margin: 0px 0px;
+
+            // @include abs.respond-to(mobile) {
+            //     margin: 0px;
+            // }
+
+            // @include abs.respond-to(largeDesktop) {
+            //     margin: 0px 40px;
+            // }
+
+            // @include abs.respond-to(extraLargeDesktop) {
+            //     margin: 0px 40px;
+            // }
+
+            .col-6 {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+
+                .swc-parent {
+                    padding: 0px 0px 0px 0px;
+                    width: 100%;
+
+                    .swc-card {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        // background-color: transparent;
+                        box-shadow: none;
+                        width: 100%;
+                        background: #fff;
+                        padding: 10px 20px;
+                        border-radius: 18px;
+                        text-decoration: none;
+
+                        @include abs.respond-to(mobile) {
+                            margin: 10px 0px;
+                            padding: 10px;
+                            height: 90%;
+                        }
+
+                        .card-img {
+                            width: 60px;
+                            background-color: transparent;
+                            margin-bottom: 9px;
+                            margin-top: 10px;
+                            border-radius: 12px;
+                            overflow: hidden;
+                            
+                            @include abs.respond-to(mobile) {
+                                margin-top: 5px;
+                                width: 48px;
+                            }
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            @include abs.respond-to(mobile) {
+                                margin-top: 2px;
+                            }
+
+                            span {
+                                font-size: 82px;
+                                color: abs.$primary-color;
+                            }
+                        }
+
+                        .card-title {
+                            // color: abs.$primary-color;
+                            color: #263077;
+                            font-family: abs.$font-family;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 16px;
+                            line-height: 140%;
+                            text-align: center;
+                            margin-bottom: 6px;
+                            text-wrap: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            max-width: 100%;
+
+                            @include abs.respond-to(mobile) {
+                                font-size: 14px;
+                            }
+                        }
+
+                        .card-txt {
+                            // color: abs.$text-blue;
+                            color: #536288;
+                            font-family: abs.$font-family;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 14px;
+                            line-height: 160%;
+                            text-align: center;
+
+                            @include abs.respond-to(mobile) {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

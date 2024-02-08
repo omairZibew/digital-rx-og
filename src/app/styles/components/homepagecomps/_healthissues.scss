@@ -1,0 +1,94 @@
+@use "../../abstracts" as abs;
+
+.healthissues-home {
+  background-color: #fff;
+
+  padding: 35px 0px;
+
+  @include abs.respond-to(mobile) {
+    padding: 22px 0px;
+  }
+
+  .specialities-card-parent {
+    position: relative;
+    margin-bottom: 368px;
+
+    @include abs.respond-to(mobile) {
+      margin-bottom: 299px;
+    }
+
+    .specialities-card {
+      margin-top: 24px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+
+      position: absolute;
+      width: 100%;
+      //    overflow: hidden;
+      top: 0px;
+      left: 0px;
+
+      .slick-slider.slick-initialized {
+        width: 100%;
+
+        .slick-list {
+          margin: 0px -48px;
+
+          @include abs.respond-to(mobile) {
+            margin: 0px -10px;
+          }
+          // @include abs.respond-to(handheld){
+
+          // }
+          // @include abs.respond-to(smallDesktop){
+
+          // }
+          @include abs.respond-to(largeDesktop) {
+            margin: 0px -22px;
+          }
+
+          .slick-track {
+            height: 344px;
+            @include abs.respond-to(mobile) {
+              height: 299px;
+            }
+            .small-box-card-paren {
+            }
+            .small-box-card {
+              width: 242px;
+              height: 283px;
+              @include abs.respond-to(mobile) {
+                width: 184px;
+                height: 254px;
+                padding: 10px;
+              }
+
+              .card-img {
+                width: 207px;
+                height: 167px;
+                border-radius: 12px;
+
+                img {
+                  width: 100%;
+                }
+
+                @include abs.respond-to(mobile) {
+                  width: 164px;
+                  height: 135px;
+                }
+              }
+
+              &:hover {
+                height: 310px;
+                @include abs.respond-to(mobile) {
+                  height: 274px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

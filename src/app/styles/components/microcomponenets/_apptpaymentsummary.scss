@@ -1,0 +1,86 @@
+@use "../../abstracts" as abs;
+.apt-paysummary {
+  padding: 0px;
+  border-radius: 12px;
+  background: #fff;
+  margin-bottom: 12px;
+
+  .header {
+    padding: 23px 19px 5px 19px;
+    border-bottom: 0px dashed #cdcdcd;
+    color: #263077;
+    font-size: 16px;
+    font-family: abs.$font-family;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+
+    .addmem {
+      float: right;
+    }
+  }
+  .body {
+    padding: 23px 19px 23px 19px;
+    color: abs.$primary-color;
+    font-size: 18px;
+    font-family: abs.$font-family;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+
+    .ps-key {
+      color: abs.$text-blue;
+      font-size: 14px;
+      font-family: abs.$font-family;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 18px;
+      margin-bottom: 5px;
+      &.two {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+    }
+
+    .ps-value {
+      color: abs.$text-dark;
+      font-size: 14px;
+      font-family: abs.$font-family;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 21px;
+      text-align: right;
+      margin-bottom: 5px;
+      &.two {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+    }
+
+    .ps-key-bold {
+      color: abs.$text-dark;
+      font-size: 16px;
+      font-family: abs.$font-family;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+      margin-top: 14px;
+    }
+
+    .ps-value-bold {
+      color: abs.$text-dark;
+      font-size: 16px;
+      font-family: abs.$font-family;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+      text-align: right;
+      margin-top: 14px;
+    }
+
+    .payment-divider {
+      border-top: 1px dashed abs.$text-dark;
+      margin-top: 10px;
+    }
+  }
+}

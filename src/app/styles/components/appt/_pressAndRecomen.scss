@@ -1,0 +1,77 @@
+@use "../../abstracts" as abs;
+
+.prescription {
+    padding: 16px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 12px;
+
+    .header {
+        display: flex;
+        gap: 10px;
+        font-size: 18px;
+        color: abs.$text-primary;
+        font-weight: 600;
+        line-height: 27px;
+        align-items: center;
+        padding: 0;
+
+        img {
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 1px 1px 4px rgb(202, 202, 202);
+        }
+    }
+
+    .images {
+        padding: 0;
+        margin-top: 16px;
+
+        .img {
+            width: 100%;
+            aspect-ratio: 145/190;
+            background: #F4F8FF;
+            padding: 14px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.recomandation {
+    padding: 16px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 12px;
+
+    .header {
+        display: flex;
+        gap: 10px;
+        font-size: 18px;
+        color: abs.$text-primary;
+        font-weight: 600;
+        line-height: 27px;
+        align-items: center;
+        padding: 0;
+
+        img {
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 1px 1px 4px rgb(202, 202, 202);
+        }
+    }
+
+    .rec_text {
+        background-color: rgb(abs.$sec-5 , 30%);
+        padding: 14px;
+        border: 2px dashed abs.$sec-5;
+        margin-top: 16px;
+        border-radius: 12px;
+    }
+
+}

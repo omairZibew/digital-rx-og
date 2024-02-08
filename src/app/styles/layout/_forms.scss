@@ -1,0 +1,149 @@
+@use "../abstracts" as abs;
+
+[aria-labelledby="demo-simple-select-autowidth-label"] {
+  .MuiButtonBase-root.MuiMenuItem-root.Mui-selected {
+    background-color: abs.$card-background-color;
+  }
+
+  .MuiButtonBase-root.MuiMenuItem-root:hover {
+    background-color: abs.$card-background-color;
+  }
+}
+
+.camera {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 13px;
+  .camera-in {
+    position: relative;
+
+    img {
+      border-radius: 50%;
+    }
+    div {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 28.7px;
+      height: 28.7px;
+      background-color: abs.$primary-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+
+      label {
+        width: 28.7px;
+        height: 28.7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.form-ips {
+  margin: 0px 0px 38px 0px;
+
+  .MuiFormControl-root.MuiTextField-root {
+    width: 100%;
+
+    .MuiFormLabel-root.MuiInputLabel-root {
+      top: -17px;
+      left: -12px;
+      font-family: abs.$font-family;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      /* #2C3A57 */
+
+      color: abs.$text-primary;
+
+      .MuiFormLabel-asterisk {
+        color: abs.$warning-color;
+      }
+    }
+
+    .MuiInputBase-root.MuiOutlinedInput-root {
+      .MuiInputBase-input.MuiOutlinedInput-input {
+        padding: 11.5px 14px;
+      }
+
+      fieldset {
+        border: 1px solid abs.$corner-color;
+        border-radius: 8px;
+        legend {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .selectfmc {
+    width: 100%;
+
+    .MuiSelect-select.MuiSelect-outlined {
+      padding: 11.5px 14px;
+    }
+    .selectgray {
+      .MuiSelect-select.MuiSelect-outlined {
+        color: #a2a2a2;
+      }
+    }
+
+    .MuiFormLabel-root.MuiInputLabel-root {
+      top: -17px;
+      left: -12px;
+      font-family: abs.$font-family;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      /* #2C3A57 */
+
+      color: abs.$text-primary;
+
+      .MuiFormLabel-asterisk {
+        color: abs.$warning-color;
+      }
+    }
+
+    .MuiInputBase-root.MuiOutlinedInput-root {
+      fieldset {
+        border: 1px solid abs.$corner-color;
+        border-radius: 8px;
+        legend {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .datelabel.MuiFormLabel-root.MuiInputLabel-root {
+    margin-top: -23px;
+    left: 4px;
+
+    font-family: abs.$font-family;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    /* #2C3A57 */
+
+    color: abs.$text-primary;
+
+    .MuiFormLabel-asterisk {
+      color: abs.$warning-color;
+    }
+  }
+}

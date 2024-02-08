@@ -1,0 +1,170 @@
+@use "../../abstracts" as abs;
+.apt-dependents {
+  padding: 0px;
+  border-radius: 12px;
+  background: #fff;
+  margin-bottom: 12px;
+
+  .header {
+    padding: 23px 19px 5px 19px;
+    border-bottom: 1px dashed #cdcdcd;
+    color: #263077;
+    font-size: 18px;
+    font-family: abs.$font-family;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+
+    .addmem {
+      float: right;
+      cursor: pointer;
+      color: abs.$warning-color;
+    }
+  }
+  .body {
+    padding: 23px 19px 23px 19px;
+    color: #263077;
+    font-size: 18px;
+    font-family: abs.$font-family;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+
+    .swiper-wrapper {
+      padding-bottom: 25px;
+    }
+    .dependant {
+      width: 136px;
+      height: 89px;
+      padding: 13px 10.576px 14.89px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--secondary-color, #cfe7ff);
+      position: relative;
+      cursor: pointer;
+      margin: 7px 0px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+
+      &.fo {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+        span {
+          color: abs.$primary-color;
+          font-family: abs.$font-family;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 120%; /* 16.8px */
+          max-width: 100%;
+          padding-top: 5px;
+        }
+      }
+      &.to {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding-top: 4px;
+        padding-bottom: 4px;
+
+        .headert {
+          svg {
+            margin-right: 4px;
+            display: inline-block;
+          }
+
+          span {
+            color: #a27fff !important;
+          }
+        }
+
+        .icotext {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          .t1 {
+            color: abs.$text-dark;
+            font-family: abs.$font-family;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            padding-top: 12px;
+          }
+          .t2 {
+            padding-top: 0px !important;
+            color: abs.$text-blue;
+            font-family: abs.$font-family;
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+        }
+
+        span {
+          color: abs.$primary-color;
+          font-family: abs.$font-family;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 120%; /* 16.8px */
+          max-width: 100%;
+          padding-top: 5px;
+        }
+      }
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 13px;
+      }
+      span {
+        text-overflow: ellipsis; /* enables ellipsis */
+        white-space: nowrap; /* keeps the text in a single line */
+        overflow: hidden;
+      }
+
+      &::before {
+        content: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        right: 8px;
+        transform: translateY(-50%);
+        border: 1px solid #a2a8c9;
+        top: 15px;
+      }
+
+      &::after {
+        content: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        top: 15px;
+        transform: translateY(-50%);
+        border: 1px solid abs.$primary-color;
+        background-color: abs.$primary-color;
+        right: 13.5px;
+      }
+
+      &.checked {
+        border: 1px solid #f4f8ff;
+        background: #f4f8ff;
+        &::before,
+        &::after {
+          content: "";
+        }
+      }
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+}

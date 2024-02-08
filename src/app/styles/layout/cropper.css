@@ -1,0 +1,9 @@
+.fade.modal-backdrop.show {
+  z-index: 1309;
+}
+
+.fade.cropper-modal.modal.show {
+  z-index: 1322;
+  background-color: #0000002e;
+  opacity: 1;
+}

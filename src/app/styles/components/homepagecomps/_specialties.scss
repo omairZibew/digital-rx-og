@@ -1,0 +1,58 @@
+@use "../../abstracts" as abs;
+
+.Specialties-home {
+  background-color: abs.$card-background-color;
+
+  padding: 35px 0px;
+
+  @include abs.respond-to(mobile) {
+    padding: 22px 0px;
+  }
+
+  .specialities-card-parent {
+    position: relative;
+    margin-bottom: 250px;
+
+    @include abs.respond-to(mobile) {
+      margin-bottom: 262px;
+    }
+
+    .specialities-card {
+      margin-top: 24px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+
+      position: absolute;
+      width: 100%;
+      //    overflow: hidden;
+      top: 0px;
+      left: 0px;
+
+      .slick-slider.slick-initialized {
+        width: 100%;
+
+        .slick-list {
+          margin: 0px -48px;
+
+          @include abs.respond-to(mobile) {
+            margin: 0px -10px;
+          }
+          // @include abs.respond-to(handheld){
+
+          // }
+          // @include abs.respond-to(smallDesktop){
+
+          // }
+          @include abs.respond-to(largeDesktop) {
+            margin: 0px -22px;
+          }
+
+          .slick-track {
+            height: 261px !important;
+          }
+        }
+      }
+    }
+  }
+}

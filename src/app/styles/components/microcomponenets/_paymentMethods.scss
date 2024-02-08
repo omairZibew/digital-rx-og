@@ -1,0 +1,65 @@
+@use "../../abstracts" as abs;
+
+.payment-method-comp {
+    padding: 23px 19px;
+    border-radius: 12px;
+    background: #fff;
+    margin-bottom: 12px;
+
+    .title {
+        color: #263077;
+        font-family: abs.$font-family;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%;
+        /* 24px */
+    }
+
+    .pay-list {
+        padding-left: 30px;
+
+        .pay-item {
+            margin: 10px 0px;
+            position: relative;
+            cursor: pointer;
+
+            color: abs.$text-dark;
+            font-family: abs.$font-family;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 150%;
+            /* 21px */
+
+            &.selected {
+                &::after {
+                    content: " ";
+                    width: 10px;
+                    height: 10px;
+                    border: 1px solid abs.$primary-color;
+                    background-color: abs.$primary-color;
+                    border-radius: 50%;
+                    display: block;
+                    position: absolute;
+                    left: -25px;
+                    top: 50%;
+                    transform: translateY(-34%);
+                }
+            }
+
+            &:before {
+                content: " ";
+                width: 20px;
+                height: 20px;
+                border: 1px solid abs.$primary-color;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+                left: -30px;
+                top: 50%;
+                transform: translateY(-43%);
+            }
+        }
+    }
+}

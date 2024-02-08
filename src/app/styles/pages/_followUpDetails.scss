@@ -1,0 +1,316 @@
+@use "../abstracts" as abs;
+
+.FollowUpDetails-main {
+    margin: 40px auto;
+
+    @include abs.respond-to(mobile) {
+        margin: 20px;
+    }
+
+    .userapptDetails {
+        @include abs.respond-to(mobile) {
+            display: grid;
+            grid-template-areas: "apptState" "apptDetails" "patientDetails";
+
+            .apptDetails {
+                grid-area: apptDetails;
+            }
+
+            .apptState {
+                grid-area: apptState;
+            }
+
+            .patientDetails {
+                grid-area: patientDetails;
+            }
+        }
+
+        .rov-parent {
+            background-color: #fff;
+            padding: 16px;
+            border-radius: 12px;
+
+            .rov {
+                font-size: 18px;
+                font-weight: 600;
+                color: abs.$text-primary;
+            }
+
+            .files {
+                display: flex;
+                gap: 8px;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 15px;
+
+                .file_text {
+                    display: flex;
+                    gap: 5px;
+                    align-items: center;
+
+                    img {
+                        width: 20px;
+                    }
+
+                    .counter {
+                        font-size: 24px;
+                        color: abs.$sec-3;
+                        font-weight: 600;
+                    }
+
+                    .sub {
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: abs.$text-blue;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .appt-parent {
+        position: relative;
+
+        .appt-state {
+            border-radius: 12px;
+            border: 4px solid abs.$sec-9;
+            padding: 15px 16px;
+            background-color: #fff;
+
+            &.vc {
+                border: 4px solid abs.$sec-8;
+            }
+
+            &.tp {
+                border: 4px solid abs.$sec-3;
+            }
+
+            .header {
+                background: rgba(255, 255, 255, 0.43);
+                border-radius: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 52px;
+                margin-bottom: 17px;
+                color: abs.$text-primary;
+                font-weight: 600;
+
+                .treatment-img {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    border: 1px solid #fff;
+                    margin-right: 10px;
+                }
+
+                .ipimg {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+            }
+
+            .doc {
+                display: flex;
+                justify-content: space-between;
+
+                @include abs.respond-to(mobile) {
+                    display: block;
+                }
+
+                .doc_info {
+                    display: grid;
+                    grid-template-columns: 64px 1fr;
+                    align-items: center;
+                    gap: 8px;
+
+                    @include abs.respond-to(mobile) {
+                        grid-template-columns: 46px 1fr;
+                        margin-top: 20px;
+                        max-width: 90%;
+                    }
+
+                    .img {
+                        width: 64px;
+                        height: 64px;
+                        border-radius: 100%;
+                        overflow: hidden;
+                        border: 3px solid #fff;
+                        background-size: 160%;
+                        background-position: center;
+
+                        @include abs.respond-to(mobile) {
+                            width: 46px;
+                            height: 46px;
+                        }
+
+                        img {
+                            width: 160%;
+                        }
+                    }
+
+                    .doc_name {
+                        display: flex;
+                        flex-direction: column;
+                        color: abs.$text-primary;
+                        font-family: abs.$font-family;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 110%;
+                        letter-spacing: 0.25px;
+
+                        @include abs.respond-to(mobile) {
+                            font-size: 16px;
+                        }
+
+                        span {
+                            color: abs.$text-blue;
+                            font-family: abs.$font-family;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 24px;
+                            letter-spacing: 0.44px;
+
+                            @include abs.respond-to(mobile) {
+                                display: flex;
+                                margin-top: 6px;
+                            }
+                        }
+                    }
+
+
+                }
+
+                .appt_type {
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+                    flex-direction: column;
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: abs.$text-primary;
+
+                    img {
+                        border-radius: 100%;
+                        width: 64px;
+                        height: 64px;
+                        filter: drop-shadow(0px 4px 8px rgba(184, 184, 184, 0.411));
+                    }
+
+                    @include abs.respond-to(mobile) {
+                        position: absolute;
+                        top: 15px;
+                        right: 15px;
+
+                        span {
+                            display: none;
+                        }
+
+                        img {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+
+                }
+            }
+
+            .follow_info {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 30px;
+                align-items: center;
+                padding: 10px 14px;
+                background-color: #FBFCFF;
+                border-radius: 12px;
+                position: relative;
+
+                @include abs.respond-to(mobile) {
+                    flex-direction: column;
+                    gap: 10px;
+                    padding-left: 5px;
+                }
+
+                .free {
+                    padding: 2px 10px;
+                    background-color: rgb(18, 209, 18);
+                    border-radius: 6px;
+                    color: #fff;
+                    margin-left: 10px;
+                    align-self: self-start;
+
+                    @include abs.respond-to(mobile) {
+                        position: absolute;
+                        right: 8px;
+                        top: 8px;
+                    }
+                }
+
+                .followDate {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: 64px;
+                        height: 64px;
+                    }
+
+                    @include abs.respond-to(mobile) {
+                        width: 100%;
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+
+
+
+                    .follow_text {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3px;
+
+
+                        .title {
+                            font-size: 16px;
+                            font-weight: 600;
+                            color: abs.$secondary-color;
+                        }
+
+                        .date {
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+
+                        @include abs.respond-to(mobile) {
+                            .title {
+                                font-size: 14px;
+                            }
+
+                            .date {
+                                font-size: 12px;
+                            }
+                        }
+
+                    }
+                }
+
+                .buttonSec {
+                    @include abs.respond-to(mobile) {
+                        width: 100%;
+                        display: flex;
+                        justify-content: end;
+                    }
+                }
+            }
+        }
+
+
+    }
+}

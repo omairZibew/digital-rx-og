@@ -1,0 +1,134 @@
+@use "../../abstracts" as abs;
+.rev-modal {
+  .modal-header {
+    border: none !important;
+    padding-bottom: 0px !important;
+  }
+  .rev-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .main {
+      color: abs.$text-dark;
+      text-align: center;
+      font-family: abs.$font-family;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .sub {
+      color: abs.$text-blue;
+      text-align: center;
+      font-family: abs.$font-family;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 26px;
+    }
+    .star-list {
+      display: flex;
+      margin: 25px 0px 40px 0px;
+    }
+
+    .ta {
+      width: 100%;
+
+      textarea {
+        width: 100%;
+        border-radius: 8px;
+        border: 1.5px solid rgba(160, 170, 192, 0.5);
+
+        padding: 11px;
+        color: abs.$text-dark;
+
+        font-family: abs.$font-family;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26px;
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+.share_feadback {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  position: relative;
+  background-color: abs.$primary-color;
+
+  .header{
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+  }
+
+  .img{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+  }
+}
+
+.rating-type {
+  width: 100%;
+  padding: 17px 13px;
+  border-radius: 15.441px;
+  background: #fff;
+  font-family: abs.$font-family;
+
+  .headr {
+    color: abs.$primary-color;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 24px */
+  }
+
+  .u-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0px 13px 0px;
+
+    .del-btn {
+      display: flex;
+      width: 24px;
+      height: 24px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 200px;
+      background: #f4f8ff;
+      cursor: pointer;
+    }
+  }
+
+  .txt {
+    border-radius: 8px;
+    background: #f8f8f8;
+    padding: 10px 12px;
+    p {
+      color: abs.$text-blue;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 18px; /* 150% */
+    }
+
+    .btnr {
+      background: transparent !important;
+    }
+  }
+}

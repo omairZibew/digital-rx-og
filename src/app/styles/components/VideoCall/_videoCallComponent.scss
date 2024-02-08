@@ -1,0 +1,515 @@
+@use "../../abstracts" as abs;
+
+.vc-screen {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 800;
+  background: abs.$card-background-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .parent {
+    width: 100%;
+    flex-grow: 1;
+    position: relative;
+    border-radius: 0px;
+    overflow: hidden;
+    margin: 0px;
+    background-color: #161929;
+
+    @include abs.respond-to(mobile) {
+      width: 100%;
+      margin: 0px;
+      border-radius: 0px;
+    }
+
+    .Remote {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+
+      .agora_video_player {
+        height: 100% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: auto !important;
+      }
+    }
+    .Local {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      width: 287px;
+      height: 175px;
+      z-index: 1;
+      transition: all 1s ease;
+
+      @include abs.respond-to(mobile) {
+        right: 10px;
+        top: 10px;
+        width: 93px;
+      }
+
+      .agora_video_player {
+        height: 100% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: auto !important;
+      }
+
+      &:only-child {
+        right: 0%;
+        bottom: 0%;
+
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .btm-bar {
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      display: flex;
+      height: 70px;
+      flex-direction: row;
+
+      @include abs.respond-to(mobile) {
+        width: 100%;
+        margin: 0px;
+        border-radius: 0px;
+      }
+
+      .btn-grp {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .btnr-banger2 {
+          background-color: #ff4949 !important;
+          border-color: #ff4949 !important;
+        }
+        .btnr-primary2 {
+          background-color: #1a71ff !important;
+          border-color: #1a71ff !important;
+          border-radius: 50% !important;
+          padding: 11px !important;
+
+          @include abs.respond-to(mobile) {
+            img{
+              width: 14px;
+            }
+          }
+          
+        }
+      }
+    }
+
+    .topbar {
+      width: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      display: flex;
+      height: 70px;
+
+      .container {
+        text-align: left;
+        h1 {
+          color: #e2e2e2;
+          font-family: abs.$font-family;
+          font-size: 24px !important;
+          font-style: normal;
+          font-weight: 500 !important;
+          line-height: normal;
+
+          @include abs.respond-to(mobile) {
+            font-size: 16px !important;
+          }
+
+          span {
+            color: #ee6e6e;
+          }
+        }
+        h5 {
+          font-family: abs.$font-family;
+          color: #9f9f9f;
+          font-size: 14px !important;
+          font-style: normal;
+          font-weight: 500 !important;
+          line-height: normal;
+          margin-bottom: 0px !important;
+        }
+      }
+    }
+
+    .videoview {
+      width: 100%;
+      position: absolute;
+      top: 70px;
+      overflow: hidden !important;
+      left: 0px;
+      display: flex;
+      height: calc(100% - 140px);
+      flex-direction: row;
+
+      @include abs.respond-to(mobile) {
+        height: calc(100% - 140px);
+      }
+
+      .videoview-track {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .videowindow {
+          position: absolute;
+          max-height: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          height: calc(100vh - 140px) !important;
+          width: auto !important;
+          border-radius: 16px;
+          overflow: hidden;
+
+          @include abs.respond-to(mobile) {
+            height: auto !important;
+            width: 100% !important;
+            left: 0px !important;
+            top: 50% !important;
+            transform: translate(0px, -50%) !important;
+          }
+
+          .onlyname {
+            height: calc(100vh - 140px) !important;
+            width: calc((100vh - 140px) * (1.77));
+            background-color: #6eb57d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            @include abs.respond-to(mobile) {
+              height: calc((100vw) / (1.77)) !important;
+              width: 100vw !important;
+            }
+
+            div {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 30%;
+              transform: translate(-50%, -50%);
+              border-radius: 50%;
+              padding-top: 30%; // This creates a 1:1 aspect ratio (square) based on the width of the rectangle parent
+              background-color: #161929;
+
+              span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #6eb57d;
+                font-size: 324%;
+              }
+            }
+          }
+
+          .video-rernd {
+            height: calc(100vh - 140px) !important;
+            width: auto !important;
+            @include abs.respond-to(mobile) {
+              height: auto !important;
+              width: 100% !important;
+            }
+
+            video {
+              height: calc(100vh - 140px) !important;
+              width: auto !important;
+
+              @include abs.respond-to(mobile) {
+                height: auto !important;
+                width: 100% !important;
+              }
+            }
+          }
+
+          .ftu-btn {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+
+            display: flex;
+
+            border-radius: 60.914px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(2.7688093185424805px);
+            padding: 5.538px 19.935px;
+            svg {
+              margin-right: 5px;
+            }
+            p {
+              margin: 0px !important;
+            }
+          }
+
+          .ftu-btns2 {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: #212032;
+          }
+        }
+
+        &.twousers {
+          .local {
+            box-shadow: 0 0 10px 0 hsla(0, 0%, 85%, 0.541);
+
+            top: 0px;
+            right: 50px;
+            left: unset;
+            transform: none;
+            z-index: 999;
+            max-height: 181px;
+
+
+            @include abs.respond-to(mobile) {
+              height: calc(116px) !important;
+              width: calc((116px) * (1.77)) !important;
+              left: unset !important;
+              top: 1px !important;
+              right: 15px !important;
+              transform: translate(0px, 0%) !important;
+              max-height: 116px;
+            }
+  
+
+            .onlyname {
+              height: calc(181px) !important;
+              width: calc((181px) * (1.77));
+              background-color: #263077;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              position: relative;
+
+              @include abs.respond-to(mobile) {
+               
+                height: calc(116px) !important;
+                width: calc((116px) * (1.77)) !important;
+              }
+
+              div {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 30%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                padding-top: 30%; // This creates a 1:1 aspect ratio (square) based on the width of the rectangle parent
+                background-color: #161929;
+
+                span {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  color: #263077;
+                  font-size: 324%;
+                }
+              }
+            }
+            .video-rernd {
+              height: 181px !important;
+
+              @include abs.respond-to(mobile) {
+                height: 116px !important;
+                width: calc((116px) * (1.77)) !important;
+                
+              }
+
+              video {
+                height: 181px !important;
+
+                @include abs.respond-to(mobile) {
+                  height: 116px !important;
+                  width: calc((116px) * (1.77)) !important;
+                  
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .controls {
+    position: fixed;
+    z-index: 2;
+    bottom: 5px;
+    width: calc(100%);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: #fff0;
+    //backdrop-filter: blur(2.6764473915100098px);
+    height: 122px;
+    margin-top: 0px;
+
+    .icons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0px 25px;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: rgba(250, 250, 250, 0.5);
+      backdrop-filter: blur(7.5px);
+      -webkit-backdrop-filter: blur(7.5px);
+
+      &.leavecall {
+        background: rgb(255 76 94 / 90%);
+        width: 70px;
+        height: 70px;
+        border-radius: 22px;
+
+        &.leavingbtn {
+          div {
+            height: 40px;
+            width: 40px;
+            span {
+              width: 100%;
+              height: 100%;
+              color: #fff !important;
+            }
+          }
+        }
+      }
+
+      &.disabled {
+        div {
+          &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            background-color: #ffffff;
+            transform: rotate(224deg);
+          }
+        }
+      }
+
+      div {
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      color: abs.$text-dark;
+      text-align: center;
+      font-family: abs.$font-family;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100.5%;
+    }
+
+    .btnr {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 20px;
+    }
+
+    &.nopointer {
+      pointer-events: none;
+    }
+  }
+}
+
+.vc-loading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  z-index: 800;
+  pointer-events: none;
+  background: #060606a1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .loadingio-spinner-ripple-s3tajgoiuyn {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    overflow: hidden;
+    background: none;
+
+    .ldio-4x6ufyfvti6 {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform: translateZ(0) scale(1);
+      backface-visibility: hidden;
+      transform-origin: 0 0; /* see note above */
+    }
+    .ldio-4x6ufyfvti6 div {
+      box-sizing: content-box;
+    }
+
+    @keyframes ldio-4x6ufyfvti6 {
+      0% {
+        top: 96px;
+        left: 96px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+      }
+      100% {
+        top: 18px;
+        left: 18px;
+        width: 156px;
+        height: 156px;
+        opacity: 0;
+      }
+    }
+    .ldio-4x6ufyfvti6 div {
+      position: absolute;
+      border-width: 4px;
+      border-style: solid;
+      opacity: 1;
+      border-radius: 50%;
+      animation: ldio-4x6ufyfvti6 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+    .ldio-4x6ufyfvti6 div:nth-child(1) {
+      border-color: abs.$primary-color;
+      animation-delay: 0s;
+    }
+    .ldio-4x6ufyfvti6 div:nth-child(2) {
+      border-color: abs.$sec-2;
+      animation-delay: -0.5s;
+    }
+  }
+}

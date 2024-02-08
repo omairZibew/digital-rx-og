@@ -1,0 +1,173 @@
+@use "../../abstracts" as abs;
+
+.appt_details {
+    background: #fff;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+    border-radius: 12px;
+
+    .MuiButtonBase-root {
+        margin: 0;
+
+        &.Mui-expanded {
+            border-bottom: 2px solid #e5e5e5;
+        }
+
+        @include abs.respond-to(mobile) {
+            margin-top: 20px;
+        }
+    }
+
+    &::before {
+        content: 0;
+    }
+
+    @include abs.respond-to(mobile) {
+        margin-top: 20px;
+    }
+
+    .header {
+        color: abs.$text-primary;
+        font-family: abs.$font-family;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 10px 15px;
+
+        &.top_header {
+            padding: 0;
+            border-bottom: none;
+        }
+
+        @include abs.respond-to(mobile) {
+            font-size: 16px;
+        }
+    }
+
+    .appt_info {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .appt_par{
+            position: relative;
+
+        }
+
+        .complete {
+            font-size: 14px;
+            padding: 5px 10px;
+            background-color: #EDFAF1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #48C66F;
+            border-radius: 8px;
+            gap: 8px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 600;
+            align-self: center;
+        }
+
+        .txt {
+            display: flex;
+            flex-direction: column;
+            color: abs.$text-blue;
+            font-family: abs.$font-family;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+
+            &.myself {
+                align-items: start;
+
+                span {
+                    color: abs.$text-dark;
+                    font-family: abs.$font-family;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    background-color: abs.$sec-5;
+                    border-radius: 6px;
+                    padding: 4px 8px;
+                }
+            }
+
+            span {
+                color: abs.$text-dark;
+                font-family: abs.$font-family;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+
+            button {
+                padding: 10px 15px;
+                border: none;
+            }
+        }
+
+        .icon-text {
+            display: flex;
+            align-items: center;
+            margin: 0px 0px 10px 0px;
+            width: 100%;
+
+            .icon {
+                border-radius: 10px;
+                border: none;
+                background: #fff0;
+                margin-right: 7px;
+                display: flex;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                justify-content: center;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .txt {
+                display: flex;
+                flex-direction: column;
+
+                span.t1 {
+                    color: abs.$text-blue;
+                    font-size: 11px;
+                    font-weight: 500;
+                    margin-bottom: 3px;
+                }
+
+                span.t2 {
+                    color: abs.$text-dark;
+                    font-size: 14px;
+                    font-weight: 600;
+                    font-family: abs.$font-family;
+
+                    .t3 {
+                        color: #263077;
+                        padding-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+}

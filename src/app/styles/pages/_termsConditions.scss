@@ -1,0 +1,90 @@
+@use "../abstracts" as abs;
+
+.TermsConditions {
+    .container {
+        .tcp {
+
+            padding: 55px;
+            position: relative;
+
+            @include abs.respond-to(mobile) {
+                padding: 30px;
+            }
+
+            .header-1 {
+                font-size: 40px;
+                color: #263077;
+                max-width: 70%;
+                line-height: 34px;
+
+                @include abs.respond-to(mobile) {
+                    font-size: 20px;
+                    line-height: 20px;
+                    margin-bottom: 0;
+                }
+            }
+
+            .header-2 {
+                font-size: 26px;
+                color: abs.$text-dark;
+                font-weight: 600;
+                line-height: 32px;
+                margin: 30px 0;
+
+                @include abs.respond-to(mobile) {
+                    font-size: 12px;
+                }
+            }
+
+            .text {
+                font-size: 16px;
+                color: #536288;
+
+                @include abs.respond-to(mobile) {
+                    font-size: 11px;
+                }
+
+                .deff {
+                    color: #37474F;
+                    font-weight: 600;
+                }
+            }
+
+
+            .link {
+                color: #242424;
+
+                a {
+                    color: #242424;
+                    text-decoration: none;
+                }
+
+                &:hover {
+                    a {
+                        color: #242424;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .p-image {
+                position: absolute;
+                top: 25px;
+                right: 25px;
+                width: 30%;
+                display: flex;
+                justify-content: right;
+
+                img {
+                    @include abs.respond-to(mobile) {
+                        width: 100px;
+                    }
+                }
+
+                // transform: translateY(-50%);
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,93 @@
+@use "../../abstracts" as abs;
+
+.conversation_area {
+    max-height: 550px;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    flex: 1;
+    padding: 0 15px;
+
+    .chat {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+
+        .chat_text {
+            max-width: 80%;
+
+            @include abs.respond-to(mobile){
+                max-width: 65%;
+            }
+            p {
+                font-size: 14px;
+                margin: 0;
+                padding: 10px;
+                border-radius: 12px;
+                background-color: #F2F4F5;
+                // max-width: 430px;
+            }
+
+            span {
+                font-size: 12px;
+            }
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+
+        &.user_side {
+            justify-content: flex-end;
+
+            .chat_text {
+                // text-align: right;
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    text-align: right;
+                }
+
+
+                p {
+                    background-color: abs.$sec-5;
+                }
+            }
+        }
+    }
+
+    .msg_time {
+        display: flex;
+        justify-content: center;
+        margin: 15px;
+
+        .msg_time_text {
+            font-size: 12px;
+            color: abs.$text-ash;
+            text-align: center;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+        background: #e7e6e6;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: abs.$secondary-color;
+        border-radius: 15px;
+        border: 1px solid transparent;
+        background-clip: content-box;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: abs.$secondary-color;
+    }
+}

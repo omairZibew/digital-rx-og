@@ -1,0 +1,221 @@
+@use "../abstracts" as abs;
+
+.profilemain {
+  margin-top: 39px !important;
+  @include abs.respond-to(mobile) {
+    margin-top: 20px !important;
+  }
+
+  .profile-nav {
+    background: abs.$primary-color;
+    border-radius: 12px;
+    position: relative;
+    padding-top: 140px;
+
+    .edit-btnn {
+      position: absolute;
+      top: 13px;
+      right: 11px;
+      color: abs.$text-primary;
+    }
+    .elp-img {
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      transform: rotate(251deg);
+    }
+
+    .elp-img2 {
+      position: absolute;
+      top: 71px;
+      right: -5px;
+      transform: rotate(66deg);
+    }
+    .profile-container {
+      padding: 13px;
+      background: #ffffff;
+      border-radius: 12px;
+      .pavatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .img {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          position: relative;
+          overflow: hidden;
+
+          margin-top: -61px;
+          img {
+            width: 100%;
+          }
+        }
+
+        .username {
+          font-family: abs.$font-family;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 20px;
+          /* identical to box height, or 111% */
+
+          display: flex;
+          align-items: center;
+
+          /* Text Color */
+          margin-top: 15px;
+
+          color: abs.$text-dark;
+        }
+      }
+
+      .plinks {
+        padding: 21px 0px;
+
+        .item-us {
+          margin: 7px 0px;
+          display: flex;
+          align-items: center;
+
+          .img {
+            width: 20px;
+            margin-right: 5px;
+          }
+
+          .txt {
+            font-family: abs.$font-family;
+            color: #0f2851;
+
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+        }
+      }
+
+      .appts {
+        border-radius: 12px;
+        background: #f4f8ff;
+        position: relative;
+        text-align: center;
+        padding: 19px;
+
+        .img {
+          position: absolute;
+          top: 13px;
+          left: 13px;
+        }
+
+        .t1 {
+          color: #263077;
+          font-family: abs.$font-family;
+          font-size: 48px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 64px; /* 133.333% */
+        }
+        .t2 {
+          color: abs.$text-gray;
+          font-family: abs.$font-family;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 24px; /* 150% */
+        }
+      }
+
+      .pbtn {
+        /* identical to box height, or 100% */
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+
+          font-family: abs.$font-family;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 16px;
+          color: abs.$warning-color;
+          cursor: pointer;
+          padding-bottom: 30px;
+          img {
+            padding-right: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .col-right-profile {
+    display: flex;
+    justify-content: center;
+
+    .profile-right {
+      padding: 21px 20px;
+      background: #fff;
+      border-radius: 8px;
+      height: 100%;
+      width: 100%;
+
+      &.profile-r-edi {
+        .heading {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 15px;
+
+          .MuiDivider-root.MuiDivider-fullWidth {
+            border-bottom: 1px solid abs.$corner-color;
+            opacity: 1;
+            margin: 18px 0px 13px 0px;
+            width: 100%;
+          }
+        }
+        .formparent {
+          display: flex;
+          justify-content: center;
+
+          .startup-form {
+            width: 65%;
+            .text-1 {
+              display: none;
+            }
+
+            .camera {
+              margin-top: 14px;
+              margin-bottom: 50px;
+              .camera-in {
+                width: 120px;
+                height: 120px;
+
+                img.avatar {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .profile-rightwe {
+      padding: 0px 20px;
+      height: 100%;
+      width: 100%;
+
+      @include abs.respond-to(mobile) {
+        padding: 21px 0px;
+      }
+    }
+  }
+}

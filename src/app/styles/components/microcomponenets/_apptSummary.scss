@@ -1,0 +1,158 @@
+@use "../../abstracts" as abs;
+.apt-Summary {
+  border-radius: 12px;
+  background: #fff;
+  margin-bottom: 12px;
+
+  @include abs.respond-to(mobile) {
+    display: none;
+  }
+
+
+  .header {
+    padding: 23px 19px 5px 19px;
+    border-bottom: 1px dashed #cdcdcd;
+    color: #263077;
+    font-size: 18px;
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+  }
+
+  .body {
+    padding: 23px 19px 23px 19px;
+    color: #263077;
+    font-size: 18px;
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+
+    .ribbion {
+      background: rgba(244, 248, 255, 0.4);
+      border-radius: 12px;
+      padding: 14px;
+
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .apt-type {
+          color: #263077;
+
+          font-size: 16px;
+          font-family: abs.$font-family;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 120%;
+
+          img {
+            width: 32px;
+            height: auto;
+            border-radius: 0%;
+            margin-right: 10px;
+          }
+        }
+
+        .icon-text {
+          display: flex;
+          align-items: center;
+          margin: 0px;
+
+          .icon {
+            border-radius: 10px;
+            border: 5px solid #fff0;
+            background: #fff0;
+            margin-right: 17px;
+            display: flex;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+
+          .txt {
+            color: abs.$text-dark;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: abs.$font-family;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+
+            span {
+              color: #0f2851;
+              font-size: 12px;
+              font-weight: 500;
+              margin-bottom: 8px;
+              display: inline-block;
+            }
+          }
+        }
+
+        .treatmentimg {
+          margin-top: 25px;
+
+          color: abs.$text-dark;
+          font-family: abs.$font-family;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+
+          img {
+            max-width: 57px;
+            border-radius: 5px;
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+
+    .icon-text {
+      display: flex;
+      align-items: center;
+      margin: 10px 0px;
+
+      .icon {
+        border-radius: 10px;
+        border: 5px solid #fff0;
+        background: #fff0;
+        margin-right: 17px;
+        display: flex;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .txt {
+        color: abs.$text-dark;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: abs.$font-family;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+        span {
+          color: #0f2851;
+          font-size: 12px;
+          font-weight: 500;
+          margin-bottom: 3px;
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+}

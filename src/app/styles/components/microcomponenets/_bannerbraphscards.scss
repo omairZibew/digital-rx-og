@@ -1,0 +1,109 @@
+@use "../../abstracts" as abs;
+
+.bannersgraphs-home {
+  .bannerbraps-card-parent {
+    .bannerbrapsrow {
+      margin: 0px 0px;
+
+      @include abs.respond-to(mobile) {
+        margin: 0px;
+      }
+
+      @include abs.respond-to(largeDesktop) {
+        margin: 0px 40px;
+      }
+
+      @include abs.respond-to(extraLargeDesktop) {
+        margin: 0px 40px;
+      }
+
+      .col-6 {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        .swc-parent {
+          padding: 0px 0px 0px 0px;
+
+          .swc-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: transparent;
+            box-shadow: none;
+            width: 200px;
+
+            @include abs.respond-to(mobile) {
+              width: 165px;
+              margin: 10px 0px;
+              padding: 10px;
+            }
+
+            .card-img {
+              width: 56px;
+              height: 56px;
+              background-color: transparent;
+              margin-bottom: 9px;
+              border-radius: 50%;
+              overflow: hidden;
+
+              img {
+                width: 100%;
+                height: 100%;
+              }
+
+              @include abs.respond-to(mobile) {
+                margin-top: 2px;
+              }
+
+              span {
+                font-size: 82px;
+                color: abs.$primary-color;
+              }
+            }
+
+            .card-title {
+              // color: abs.$primary-color;
+              color: abs.$text-primary;
+              font-family: abs.$font-family;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 24px;
+              line-height: 140%;
+              text-align: center;
+              margin-bottom: 6px;
+              text-wrap: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-width: 100%;
+
+              @include abs.respond-to(mobile) {
+                font-size: 16px;
+              }
+            }
+
+            .card-txt {
+              // color: abs.$text-blue;
+              color: #536288;
+              font-family: abs.$font-family;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 160%;
+              text-align: center;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              -webkit-line-clamp: 2;
+              text-overflow: ellipsis;
+
+              @include abs.respond-to(mobile) {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,343 @@
+@use "../../abstracts" as abs;
+
+.btnr {
+  padding: 15px 30px;
+  font-family: abs.$font-family;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px !important;
+  line-height: 150%;
+  display: inline-flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  border-radius: 90px !important;
+  border: 1px solid black;
+  letter-spacing: 0.1em;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+
+  // hover state 
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken(abs.$primary-color, 15%);
+    transition: all .4s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: #fff !important;
+
+    &:before {
+      width: 100%;
+    }
+  }
+
+  // hover state
+
+  span.arr {
+   // background-image: url(../../../static/btn/arr.svg);
+    margin-left: 9px;
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+
+  span.yellow {
+    color: abs.$sec-2;
+    padding-left: 5px;
+  }
+
+  &.btnr-download {
+    span {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAxNiAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0Ljc4NDkgNS42Mjk1OUMxNC44MzQ3IDUuMzYyMzUgMTQuODYgNS4wOTEwOSAxNC44NjAzIDQuODE5MjJDMTQuODU3MyAyLjI5NDI4IDEyLjgwNzkgMC4yNDk4ODYgMTAuMjgzIDAuMjUyOTMzQzguMzYwODkgMC4yNTUyNDQgNi42NDU1MiAxLjQ1OTUzIDUuOTkwNDIgMy4yNjY1NUM0LjgxNzQ3IDIuNzk5NjQgMy40ODgwOCAzLjM3MTk2IDMuMDIxMTMgNC41NDQ5MUMyLjk4MDcxIDQuNjQ2NDQgMi45NDc2MyA0Ljc1MDcxIDIuOTIyMTUgNC44NTY5NkMxLjA0OTI2IDUuMTM3MDYgLTAuMjQxOTIxIDYuODgyNCAwLjAzODE4MSA4Ljc1NTI5QzAuMjg5Mzg2IDEwLjQzNSAxLjczMjM5IDExLjY3NzcgMy40MzA3NSAxMS42NzdINi4yODgxM0M2LjYwMzc2IDExLjY3NyA2Ljg1OTYyIDExLjQyMTEgNi44NTk2MiAxMS4xMDU1QzYuODU5NjIgMTAuNzg5OSA2LjYwMzc2IDEwLjUzNCA2LjI4ODEzIDEwLjUzNEgzLjQzMDc1QzIuMTY4MjcgMTAuNTM0IDEuMTQ0ODMgOS41MTA1NyAxLjE0NDgzIDguMjQ4MDlDMS4xNDQ4MyA2Ljk4NTYgMi4xNjgyNyA1Ljk2MjE3IDMuNDMwNzUgNS45NjIxN0MzLjc0NjM4IDUuOTYyMTcgNC4wMDIyNCA1LjcwNjMxIDQuMDAyMjQgNS4zOTA2OEM0LjAwMzI4IDQuNzU5NDUgNC41MTU4MyA0LjI0ODU3IDUuMTQ3MDYgNC4yNDk2MUM1LjQ0NTU4IDQuMjUwMTEgNS43MzIwOCA0LjM2NzM3IDUuOTQ1MjQgNC41NzYzMkM2LjE3MDAzIDQuNzk3ODYgNi41MzE4NyA0Ljc5NTIxIDYuNzUzNDEgNC41NzA0M0M2LjgzNjU4IDQuNDg2MDEgNi44OTE0NiA0LjM3Nzg1IDYuOTEwNDUgNC4yNjA4NkM3LjIyMDY2IDIuMzk0NjQgOC45ODQ5OCAxLjEzMzI1IDEwLjg1MTIgMS40NDM0NkMxMi43MTc0IDEuNzUzNjcgMTMuOTc4OCAzLjUxNzk5IDEzLjY2ODYgNS4zODQyMUMxMy42NTAxIDUuNDk1NDggMTMuNjI2MSA1LjYwNTc4IDEzLjU5NjcgNS43MTQ2OEMxMy41MzEgNS45NTMyMiAxMy42MjYzIDYuMjA2OTQgMTMuODMyOCA2LjM0MzI5QzE0Ljg4NDcgNy4wNDEyOSAxNS4xNzE3IDguNDU5OTUgMTQuNDczNyA5LjUxMTkxQzE0LjA1MTIgMTAuMTQ4NiAxMy4zMzg1IDEwLjUzMjEgMTIuNTc0NCAxMC41MzM5SDEwLjg1OTlDMTAuNTQ0MyAxMC41MzM5IDEwLjI4ODUgMTAuNzg5OCAxMC4yODg1IDExLjEwNTRDMTAuMjg4NSAxMS40MjExIDEwLjU0NDMgMTEuNjc2OSAxMC44NTk5IDExLjY3NjlIMTIuNTc0NEMxNC40NjgxIDExLjY3NTEgMTYuMDAxOCAxMC4xMzg1IDE2IDguMjQ0ODFDMTUuOTk5MSA3LjIzNjg3IDE1LjU1NDYgNi4yODAzNyAxNC43ODQ5IDUuNjI5NTlaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTEuODIyNyAxMi40MTU4QzExLjYwMTMgMTIuMjAxOSAxMS4yNTAyIDEyLjIwMTkgMTEuMDI4NyAxMi40MTU4TDkuMTQ1NyAxNC4yOTc3VjUuOTYyMDVDOS4xNDU3IDUuNjQ2NDIgOC44ODk4NCA1LjM5MDU2IDguNTc0MjEgNS4zOTA1NkM4LjI1ODU4IDUuMzkwNTYgOC4wMDI3MiA1LjY0NjQyIDguMDAyNzIgNS45NjIwNVYxNC4yOTc2TDYuMTIwODMgMTIuNDE1N0M1Ljg5MzggMTIuMTk2NSA1LjUzMjAzIDEyLjIwMjggNS4zMTI3NyAxMi40Mjk4QzUuMDk4ODcgMTIuNjUxMiA1LjA5ODg3IDEzLjAwMjMgNS4zMTI3NyAxMy4yMjM4TDguMTcwMTUgMTYuMDgxMkM4LjM5MzAzIDE2LjMwNDYgOC43NTQ5IDE2LjMwNTEgOC45NzgzNCAxNi4wODIyQzguOTc4NjggMTYuMDgxOCA4Ljk3OTAxIDE2LjA4MTUgOC45NzkzOCAxNi4wODEyTDExLjgzNjggMTMuMjIzOEMxMi4wNTYxIDEyLjk5NjggMTIuMDQ5OCAxMi42MzUgMTEuODIyNyAxMi40MTU4WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==");
+    }
+  }
+
+  @include abs.respond-to(mobile) {
+    font-size: 10px;
+    line-height: 16px;
+    padding: 8px 8px;
+    border-radius: 90px;
+  }
+
+  &.btnr-sm {
+    padding: 9px 18px;
+    font-size: 10px;
+
+    @include abs.respond-to(mobile) {
+      padding: 9px 9px;
+    }
+  }
+
+  &.btnr-primary {
+    background-color: abs.$primary-color;
+    color: abs.$text-white;
+    border-color: abs.$primary-color;
+
+
+    &:disabled {
+      background-color: abs.$primary-color;
+      color: abs.$text-white;
+      border-color: abs.$primary-color;
+      opacity: 0.3 !important;
+    }
+  }
+
+  &.btnr-danger {
+    background-color: abs.$warning-color;
+    color: abs.$text-white;
+    border-color: abs.$warning-color;
+
+    &:disabled {
+      background-color: abs.$warning-color;
+      color: abs.$text-white;
+      border-color: abs.$warning-color;
+      opacity: 0.3;
+    }
+  }
+
+  &.btnr-primary-light {
+    background-color: abs.$card-background-color;
+    color: abs.$primary-color;
+    border-color: abs.$card-background-color;
+
+    &:disabled {
+      background-color: abs.$card-background-color;
+      color: abs.$primary-color;
+      border-color: abs.$card-background-color;
+      opacity: 0.3;
+    }
+  }
+
+  &.btnr-primary-outline {
+    background-color: #fff;
+    color: abs.$primary-color;
+    border-color: abs.$primary-color;
+  }
+
+  &.btnr-primary-outline-white {
+    background-color: #fff0;
+    color: #fff;
+    border-color: #fff;
+
+
+
+  }
+
+  &.btnr-primary-google {
+    background-color: #fff;
+    color: abs.$text-dark;
+    border-color: abs.$corner-color;
+    width: 100%;
+    font-family: abs.$font-family;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    img {
+      padding-right: 20px;
+    }
+  }
+
+  &.btnr-white {
+    background-color: #fff;
+    color: abs.$text-dark;
+    border-color: #fff;
+  }
+
+  &.btnr-secondary {
+    background-color: abs.$corner-color;
+    color: abs.$text-dark;
+    border-color: abs.$corner-color;
+  }
+
+  // hover state
+  &.btnr-hover {
+    transition: all .3s;
+
+    .arr {
+      transition: all .3s;
+      opacity: 1;
+    }
+
+    &:after {
+    //  content: url('../../../static/btn/arr.svg');
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      transform: translateY(-46%);
+      border-radius: 10rem;
+      z-index: 2;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      transition: all 0.4s cubic-bezier(0.23, 0.69, 1, 1);
+    }
+
+    &:hover {
+      color: #fff;
+
+      .arr {
+        transition: all .3s, opacity 0.4s;
+        transform: translateX(100px);
+        opacity: 0;
+      }
+
+      &:after {
+        justify-content: end;
+        width: 100%;
+        transform: translate(-15px, -46%);
+      }
+    }
+  }
+
+  &.btnr-hover-Q {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &:after {
+     // content: url('../../../static/btn/arr.svg');
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      transform: translateY(-46%);
+      border-radius: 10rem;
+      z-index: 2;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      transition: all 0.5s cubic-bezier(0.23, 0.69, 1, 1);
+    }
+
+    &:hover {
+      color: #fff;
+
+      .arr {
+        transition: all .4s;
+        transform: translateX(100px);
+      }
+
+      &:after {
+        justify-content: end;
+        width: 100%;
+        transform: translate(-15px, -46%);
+      }
+    }
+  }
+
+  // hover state
+}
+
+.my-swal-dialog-danger {
+  .swal-button {
+    padding: 15px 30px;
+    font-family: abs.$font-family;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    display: inline-flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    border-radius: 90px;
+    border: 1px solid black;
+    letter-spacing: 0.1em;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+
+    &.swal-button--cancel {
+      background-color: abs.$card-background-color;
+      color: abs.$primary-color;
+      border-color: abs.$card-background-color;
+
+      &:disabled {
+        background-color: abs.$card-background-color;
+        color: abs.$primary-color;
+        border-color: abs.$card-background-color;
+        opacity: 0.3;
+      }
+    }
+
+    &.swal-button--confirm {
+      background-color: abs.$warning-color;
+      color: abs.$text-white;
+      border-color: abs.$warning-color;
+
+      &:disabled {
+        background-color: abs.$warning-color;
+        color: abs.$text-white;
+        border-color: abs.$warning-color;
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+.my-swal-dialog {
+  .swal-button {
+    padding: 15px 30px;
+    font-family: abs.$font-family;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    display: inline-flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    border-radius: 90px;
+    border: 1px solid black;
+    letter-spacing: 0.1em;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+
+    &.swal-button--cancel {
+      background-color: abs.$card-background-color;
+      color: abs.$primary-color;
+      border-color: abs.$card-background-color;
+
+      &:disabled {
+        background-color: abs.$card-background-color;
+        color: abs.$primary-color;
+        border-color: abs.$card-background-color;
+        opacity: 0.3;
+      }
+    }
+
+    &.swal-button--confirm {
+      background-color: abs.$primary-color;
+      color: abs.$text-white;
+      border-color: abs.$primary-color;
+
+      &:disabled {
+        background-color: abs.$primary-color;
+        color: abs.$text-white;
+        border-color: abs.$primary-color;
+        opacity: 0.3;
+      }
+    }
+  }
+}

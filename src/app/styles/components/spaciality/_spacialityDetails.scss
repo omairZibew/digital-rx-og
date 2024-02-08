@@ -1,0 +1,525 @@
+@use "../../abstracts" as abs;
+
+.container {
+    .spaciality_details {
+        font-family: abs.$font-family;
+        display: flex;
+        margin: 20px 0px;
+        max-width: 100%;
+        grid-gap: 16px;
+
+        @include abs.respond-to(mobile) {
+            flex-direction: column;
+            margin: 20px 0px;
+        }
+
+        .sp-left {
+            max-width: 350px;
+            width: 350px;
+            min-width: 350px;
+
+            @include abs.respond-to(mobile) {
+
+                min-width: 100%;
+                width: 100% !important;
+            }
+
+            .filter_area {
+                background-color: #fff;
+                padding: 20px;
+                width: 100%;
+                border-radius: 12px;
+                align-items: center;
+                gap: 10px;
+
+                h3 {
+                    color: abs.$text-primary;
+                    font-size: 24px;
+                    margin-bottom: 20px;
+                }
+
+                @include abs.respond-to(mobile) {
+                    gap: 10px;
+                }
+
+                .search {
+                    display: flex;
+                    align-items: center;
+                    border-radius: 30px;
+                    padding: 10px 15px;
+                    background-color: #f7f7f7;
+
+                    @include abs.respond-to(mobile) {
+                        width: 100%;
+                    }
+
+                    input {
+                        border: none;
+                        padding: 5px 10px;
+                        width: 100%;
+                        color: abs.$primary-color;
+                        font-weight: 500;
+                        outline: none;
+                        background-color: #f7f7f7;
+
+                    }
+
+                    svg {
+                        fill: abs.$primary-color;
+                    }
+                }
+
+                .spaciality {
+                    .spaciality_list {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        margin-top: 15px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+                        li {
+                            // padding: 10px 15px;
+                            border-radius: 30px;
+                            transition: all 0.3s ease-in-out;
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+                            font-weight: 500;
+                            cursor: pointer;
+
+                            a {
+                                padding: 10px 15px;
+                                text-decoration: none;
+                                color: inherit !important;
+                                width: 100%;
+
+                                img {
+                                    max-width: 24px;
+                                    margin-right: 10px;
+                                }
+                            }
+
+                            &.active {
+                                // background-color: abs.$primary-color;
+                                text-decoration: underline;
+                                color: abs.$primary-color;
+                                font-size: 1.2em;
+
+                                @include abs.respond-to(mobile) {
+                                    font-size: 1.1em;
+                                }
+                            }
+
+
+                            &:hover {
+                                // background-color: abs.$primary-color;
+                                // text-decoration: underline;
+                                color: abs.$primary-color;
+                                font-size: 1.2em;
+
+                                @include abs.respond-to(mobile) {
+                                    font-size: 1.1em;
+                                }
+                            }
+                        }
+
+                    }
+
+                    .view_more_btn {
+                        button {
+                            border: 1px solid abs.$corner-color;
+                            color: abs.$text-dark;
+                            padding: 15px 35px;
+                            font-weight: 500;
+                            font-size: 16px;
+
+                            @include abs.respond-to(mobile) {
+                                font-size: 12pxf;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .sp-right {
+            background-color: #fff;
+            padding: 30px;
+            ;
+            border-radius: 12px;
+            width: 100%;
+            // width: calc(100% - 416px);
+
+            @include abs.respond-to(mobile) {
+                width: 100%;
+            }
+
+            .sp_about {
+
+                h2 {
+                    font-weight: 600;
+                    border-bottom: 1px solid abs.$cal-avail;
+                    padding-bottom: 10px;
+                }
+
+                .up_sec {
+                    row-gap: 20px;
+
+                    .col-md-7 {
+                        margin-top: 20px;
+                    }
+
+                    .col {
+                        color: abs.$text-blue;
+                    }
+
+                    .img {
+                        img {
+                            width: 100%;
+                            border-radius: 12px;
+                        }
+                    }
+
+                    .text_d {
+                        margin-top: 15px;
+
+                        .text_unread {
+                            color: abs.$secondary-color;
+                            font-weight: 700;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .specialists_con {
+                .title {
+                    margin-top: 15px;
+                    background-color: abs.$card-background-color;
+                    padding: 15px;
+                    border-radius: 12px;;
+                    margin-bottom: 15px;
+
+                    h3 {
+                        margin: 0;
+                        font-weight: 600;
+                        color: #263077;
+                    }
+                }
+
+                .doctor-layout-card {
+                    width: 300px;
+                    height: 457px;
+                    margin: 0px;
+                    background: #ffffff;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    border: 1px solid transparent;
+                    border-radius: 12px;
+                    margin-bottom: 29px !important;
+                    box-shadow: abs.$box-shadow-bottom;
+                    transition: all 0.3s ease-in-out;
+
+                    margin-left: 20px;
+
+                    @include abs.respond-to(mobile) {
+                        width: 100%;
+                        height: 470px;
+                        margin-left: 0;
+                    }
+
+                    &.Basic {
+                        height: 430px;
+
+                        @include abs.respond-to(mobile) {
+                            height: 430px;
+                        }
+
+                        .doc-info {
+                            .d-btn {
+                                bottom: 35px;
+                            }
+                        }
+                    }
+
+                    .prfl-img {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 21px;
+                        position: relative;
+                        padding: 0px !important;
+                        overflow: hidden;
+                        border-radius: 14.038px;
+
+                        img {
+                            width: 100%;
+                        }
+
+                        height: 174px;
+                        max-height: 174px;
+                        min-height: 174px;
+
+                        &::before {
+                            position: absolute;
+                            bottom: 0px;
+                            left: 0px;
+                            width: 100%;
+                            height: 2px;
+                            background: #ededed;
+                            opacity: 0.4;
+                            border-radius: 36.4393px;
+                        }
+                    }
+
+                    .doc-info {
+                        position: relative;
+                        flex-grow: 1;
+
+                        .d-Name {
+                            margin-bottom: 8px;
+
+                            font-family: abs.$font-family;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 120%;
+                            color: abs.$text-dark;
+                        }
+
+                        .d-Spec {
+                            margin-bottom: 8px;
+
+                            font-family: abs.$font-family;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 16px;
+                            line-height: 22px;
+                            color: abs.$text-dark;
+                            letter-spacing: 0.2px;
+                            height: 45px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
+                        .d-Study {
+                            margin-bottom: 16px;
+
+                            font-family: abs.$font-family;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 12px;
+                            line-height: 16px;
+                            color: abs.$primary-color;
+                            letter-spacing: 0.2px;
+                        }
+
+                        .d-tags {
+                            display: flex;
+                            margin-bottom: 16px;
+                            flex-wrap: nowrap;
+                            margin: 0px -5px;
+
+                            .tag {
+                                // display: -webkit-box;
+                                // -webkit-line-clamp: 2;
+                                // -webkit-box-orient: vertical;
+                                // overflow: hidden;
+                                display: none;
+                                flex-direction: row;
+                                align-items: center;
+                                padding: 5px 10px 5px 5px;
+                                gap: 8px;
+                                border-radius: 50px;
+                                width: fit-content;
+                                height: 34px;
+                                font-family: abs.$font-family;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 12px;
+                                line-height: 14px;
+                                margin: 5px 5px;
+                                color: #263077;
+
+                                img {
+                                    width: 24px;
+                                    height: 24px;
+                                }
+
+                                &:first-child {
+                                    display: flex;
+                                }
+
+                                &:nth-child(2) {
+                                    display: flex;
+                                }
+
+                                &:last-child {}
+                            }
+
+                            .tag-blue {
+                                background-color: abs.$sec-5;
+                            }
+
+                            .tag-green {
+                                background-color: abs.$sec-6;
+                            }
+
+                            .tag-yellow {
+                                background-color: abs.$sec-7;
+                            }
+
+                            .tag-red {
+                                background-color: abs.$sec-10;
+                            }
+                        }
+
+                        .doc-stats {
+                            margin-top: 13px;
+
+                            .doc-nav-img {
+                                background: #ffffff;
+                                /* Text */
+                                width: 40px;
+                                min-width: 40px;
+                                max-width: 40px;
+                                height: 40px;
+                                min-height: 40px;
+                                max-height: 40px;
+                                border: 5px solid #ffffff;
+                                box-shadow: abs.$box-shadow-all;
+                                border-radius: 10px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                overflow: hidden;
+                            }
+
+                            .doc-stats-tit {
+                                display: block;
+                                font-family: abs.$font-family;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 11px;
+                                line-height: 15px;
+                                color: abs.$text-ash;
+                            }
+
+                            .doc-stats-txt {
+                                display: block;
+                                font-family: abs.$font-family;
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 12px;
+                                line-height: 16px;
+                                color: abs.$text-dark;
+                            }
+                        }
+
+                        .d-btn {
+                            position: absolute;
+                            bottom: 50%;
+                            text-align: center;
+                            /* left: 50%; */
+                            transform: translatey(70%);
+                            width: 100%;
+                            display: none;
+
+                            @include abs.respond-to(mobile) {
+                                .btnr-primary-outline {
+                                    // display: none;
+                                }
+
+                                button {
+                                    padding: 12px 25px
+                                }
+                            }
+                        }
+                    }
+
+                    &:first-child {}
+
+                    &:last-child {
+                        margin-right: 20px;
+                    }
+
+                    &:hover {
+                        background-color: abs.$primary-color;
+                        color: white;
+
+                        .doc-info {
+
+                            .d-Name,
+                            .d-Spec,
+                            .d-Study,
+                            .doc-info {
+                                color: #fff;
+                            }
+
+                            .ratting {
+                                display: none;
+                            }
+
+                            .d-tags {
+                                display: none;
+                            }
+
+                            .d-btn {
+                                display: block;
+
+                                .btnr-primary-outline {
+                                    background: transparent;
+                                    color: #fff;
+                                    border: 2px solid #fff;
+                                }
+
+                                .btnr-primary {
+                                    background: #fff;
+                                    color: abs.$primary-color;
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+            }
+
+            .explore_treatments {
+                .title_b {
+                    margin-top: 15px;
+                    background-color: abs.$card-background-color;
+                    padding: 15px;
+                    border-radius: 12px;
+                    margin-bottom: 15px;
+
+                    h3 {
+                        margin: 0;
+                        font-weight: 600;
+                        color: #263077;
+                    }
+                }
+
+                .tlist {
+                    .treatment-track {
+                        max-width: 100%;
+                        margin: auto;
+
+                        .treatmentItem {
+                            @include abs.respond-to(mobile) {
+                                padding: 5px;
+                            }
+                        }
+
+                        @include abs.respond-to(mobile) {
+                            height: fit-content;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

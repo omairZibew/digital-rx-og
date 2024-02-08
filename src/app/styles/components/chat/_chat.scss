@@ -1,0 +1,379 @@
+@use "../../abstracts" as abs;
+
+.chatPage {
+    margin: 20px auto;
+
+    .main_chat {
+        display: grid;
+        grid-template-columns: 3fr 5fr;
+        gap: 20px;
+
+        @include abs.respond-to(mobile) {
+            display: block;
+        }
+
+        .left_side {
+            background-color: #fff;
+            padding: 15px !important;
+            border-radius: 12px;
+            transition: all 0.5s ease-in-out;
+
+            @include abs.respond-to(mobile) {
+                position: relative;
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+
+            .header {
+                .title {
+                    font-size: 18px;
+                    font-weight: 600;
+                    padding: 0px 0px 10px 0px;
+                    display: block;
+                }
+
+                .header_top {
+                    display: flex;
+                    gap: 10px;
+                    font-family: abs.$font-family;
+                    font-style: normal;
+                    padding: 15px;
+                    background-color: abs.$sec-5;
+                    border-radius: 12px;
+
+                    .img {
+                        img {
+                            width: 120px;
+                        }
+                    }
+
+                    .header_text {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        p {
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+
+                        button {
+                            display: flex;
+                            gap: 5px;
+                            font-size: 15px !important;
+                            padding: 10px 20px;
+                        }
+                    }
+                }
+
+            }
+
+            .chatList {
+                .msg_list {
+
+                    // max-height: 400px;
+                    // overflow-y: scroll;
+                    // overflow-x: hidden;
+
+                    .title {
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #263077;
+                        padding: 10px 0;
+                        display: block;
+                    }
+
+                    .massage_box {
+                        display: flex;
+                        flex-direction: column;
+                        // gap: 10px;
+                        max-height: 400px;
+                        min-height: 400px;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+
+
+                        .massage {
+                            display: flex;
+                            gap: 10px;
+                            justify-content: space-between;
+                            font-size: 14px;
+                            align-items: center;
+                            padding: 10px;
+                            border-radius: 12px;
+                            transition: all 0.3s ease-in-out;
+
+
+                            .msg {
+                                display: flex;
+                                gap: 10px;
+                                // justify-content: space-between;
+
+                                .img {
+                                    img {
+                                        width: 50px;
+                                        height: 50px;
+                                        border-radius: 50%;
+                                    }
+                                }
+
+                                .msg_text {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+
+                                    p {
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        margin: 0;
+                                    }
+
+                                    .doc_name {
+                                        font-size: 16px;
+                                        font-weight: 600;
+                                        cursor: pointer;
+                                    }
+
+                                    .last_msg {
+                                        font-size: 16px;
+                                        font-weight: 400;
+                                        color: abs.$text-ash;
+                                        cursor: pointer;
+                                    }
+
+                                    .msg_time {
+                                        font-size: 12px;
+                                        font-weight: 400;
+                                        color: abs.$text-ash;
+                                    }
+                                }
+
+                            }
+
+                            .indicat_msg {
+                                display: flex;
+                                flex-direction: column;
+                                // gap: 10px;
+                                justify-content: center;
+                                align-items: end;
+
+                                .status {
+                                    display: flex;
+                                    gap: 5px;
+                                    align-items: center;
+                                    color: #6EB57D;
+                                }
+
+                                .unread {
+                                    img {
+                                        width: 25px;
+                                        height: 25px;
+                                        border-radius: 50%;
+                                    }
+                                }
+                            }
+
+
+                            &.active {
+                                // background: abs.$sec-5;
+                                // border-radius: 12px;
+
+                                .msg {
+                                    .msg_text {
+                                        .last_msg {
+                                            font-size: 16px;
+                                            font-weight: 400;
+                                            color: abs.$secondary-color;
+                                        }
+                                    }
+
+                                }
+                            }
+
+                            &:hover {
+                                background: abs.$sec-5;
+                                border-radius: 12px;
+                            }
+                        }
+
+                        &::-webkit-scrollbar {
+                            width: 8px;
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background-color: transparent;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background-color: abs.$secondary-color;
+                            border-radius: 15px;
+                            border: 1px solid transparent;
+                            background-clip: content-box;
+                        }
+
+                        &::-webkit-scrollbar-thumb:hover {
+                            background-color: abs.$secondary-color;
+                        }
+
+                    }
+
+                    .no_doc {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 15px;
+                        margin-bottom: 20px;
+
+                        img {
+                            max-width: 300px;
+                        }
+
+                        .noDoc_text {
+                            font-size: 18px;
+                            font-weight: 600;
+                            color: abs.$primary-color;
+                        }
+
+                        .noDoc_small {
+                            font-size: 16px;
+                            font-weight: 600;
+                            text-align: center;
+                        }
+
+                        button {
+                            display: flex;
+                            gap: 5px;
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+        .right_side {
+            background-color: #fff;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+            transition: all 0.5s ease-in-out;
+
+            @include abs.respond-to(mobile) {
+                position: absolute;
+                top: 0;
+                transform: scaleX(0);
+                transform-origin: right;
+            }
+
+            &.chat_open{
+                transform: scaleX(1);
+            }
+
+            .doc {
+                display: flex;
+                gap: 10px;
+                padding: 15px 15px 15px 15px;
+                border-bottom: 2px solid #d6dee1;
+
+                .img {
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                    }
+                }
+
+                .doc_text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    p {
+                        font-size: 14px;
+                        font-weight: 600;
+                        margin: 0;
+                    }
+
+                    .doc_name {
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #263077;
+                        text-decoration: none;
+                        cursor: pointer;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    .status {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #b7bfcc;
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                    }
+
+                    .msg_time {
+                        font-size: 12px;
+                        font-weight: 400;
+                        color: abs.$text-ash;
+                    }
+                }
+
+            }
+
+            .start_chat_btn {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 15px;
+
+                button {
+                    display: flex;
+                    gap: 5px;
+                }
+            }
+
+            .input_area {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                padding: 5px 10px;
+                border-radius: 12px;
+                background-color: #F2F4F5;
+                margin: 0px 15px 15px 15px;
+
+                .inputs {
+                    display: flex;
+                    width: 100%;
+
+                    .attechment {
+                        padding: 10px;
+                        cursor: pointer;
+                    }
+
+                    input {
+                        width: 100%;
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+                        padding: 10px;
+                    }
+                }
+
+                .sent_arrow {
+                    cursor: pointer;
+                }
+
+            }
+        }
+    }
+
+}

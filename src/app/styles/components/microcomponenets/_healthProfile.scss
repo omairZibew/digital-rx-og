@@ -1,0 +1,128 @@
+@use "../../abstracts/" as abs;
+
+.health_container {
+    // background-color: red;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    .header {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 15px;
+
+        .btnr {
+            padding: 10px 20px !important;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            svg {
+                path {
+                    fill: abs.$primary-color;
+                    transition: all 0.2s ease-in-out;
+                }
+            }
+
+            &:hover{
+                svg {
+                    path {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+
+        span {
+            color: abs.$text-primary;
+            font-family: abs.$font-family;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 150%;
+        }
+    }
+
+    .healthOjbs {
+        display: flex;
+        gap: 10px;
+
+        @include abs.respond-to(mobile) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .health_info {
+            background-color: abs.$card-background-color;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 40px 40px 20px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+
+            @include abs.respond-to(mobile) {
+                padding: 16px 16px 40px 16px;
+            }
+
+            .title {
+                color: abs.$text-blue;
+                font-family: abs.$font-family;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 19px;
+                text-wrap: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .info {
+                line-height: 32px;
+                font-family: abs.$font-family;
+                font-size: 18px;
+                font-weight: 600;
+
+                span {
+                    font-size: 13px;
+                    font-weight: 400;
+                    line-height: 18px;
+                }
+
+            }
+
+            img {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    .lastUpdate {
+        width: 100%;
+        padding: 5px 10px;
+        color: abs.$warning-color;
+        background-color: rgb(abs.$warning-color, 5%);
+        margin-top: 15px;
+        border-radius: 8px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+
+        span {
+            font-family: abs.$font-family;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 16px;
+        }
+    }
+}

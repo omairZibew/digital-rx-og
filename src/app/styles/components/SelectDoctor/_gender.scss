@@ -1,0 +1,70 @@
+@use "../../abstracts" as abs;
+
+.gender_select {
+    padding: 20px;
+
+    .gender_title {
+      font-size: 16px;
+      color: #263077;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      font-family: abs.$font-family;
+      
+      div {
+        transition: all 0.3s ease-in-out;
+        font-weight: 500;
+        transform: rotate(180deg);
+
+        span {
+          cursor: pointer;
+          padding: 10px;
+        }
+      }
+      &.active{
+        div{
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    .select_box {
+      display: flex;
+      flex-wrap: wrap;
+      transform: scaleY(1);
+      transform-origin: top;
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+      max-height: 500px;
+      margin-top: 10px;
+
+      .gender-option {
+        padding: 6px 15px;
+        margin: 5px;
+        border-radius: 50px;
+        user-select: none;
+        cursor: pointer;
+        background-color: #EEEEEE;
+        color: #8F8F8F;
+        font-family: abs.$font-family;
+
+        label {
+          cursor: pointer;
+        }
+      }
+
+      &.active {
+        max-height: 0px;
+        transform: scaleY(0);
+        transform-origin: top;
+      }
+    }
+    
+
+    .gender-option.selected {
+      background-color: abs.$primary-color;
+      color: #fff;
+    }
+  }

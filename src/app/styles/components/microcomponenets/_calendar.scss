@@ -1,0 +1,225 @@
+@use "../../abstracts/" as abs;
+.fullcalendarcust {
+  // width: 530px;
+
+  .fc-header-toolbar {
+    margin-bottom: 18.5px !important;
+    .fc-toolbar-title {
+      color: #000;
+      font-size: 24px;
+      font-family: abs.$font-family;
+      font-weight: 800;
+    }
+  }
+
+  .fc-button {
+    background-color: transparent !important;
+    border: none !important;
+    color: #afafaf !important;
+
+    &:hover {
+      color: #000 !important;
+    }
+    &:focus {
+      color: #000 !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  .fc-scrollgrid {
+    border: none;
+
+    td,
+    th {
+      border: none;
+    }
+
+    th.fc-col-header-cell {
+      .fc-scrollgrid-sync-inner {
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        a {
+          text-decoration: none;
+          color: abs.$text-dark;
+          font-size: 16.512px;
+          font-family: abs.$font-family;
+          font-weight: 600;
+        }
+      }
+    }
+
+    td.fc-day {
+      .fc-daygrid-day-frame {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+
+        .fc-daygrid-day-top {
+          width: 100%;
+          min-height: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: abs.$cal-avail;
+          position: relative;
+          cursor: pointer;
+
+          a {
+            color: #263077;
+            text-align: center;
+            font-size: 16.512px;
+            font-family: abs.$font-family;
+            text-decoration: none !important;
+          }
+        }
+
+        .fc-daygrid-day-events {
+          position: absolute;
+        }
+
+        .fc-daygrid-day-bg {
+          .fc-daygrid-bg-harness {
+            .fc-highlight {
+            }
+          }
+        }
+      }
+
+      &.selected-date {
+        .fc-daygrid-day-frame {
+          .fc-daygrid-day-top {
+            background-color: abs.$primary-color !important;
+
+            a {
+              color: #fff;
+            }
+          }
+
+          .fc-daygrid-day-bg {
+            .fc-daygrid-bg-harness {
+              .fc-highlight {
+                background: transparent !important;
+              }
+            }
+          }
+        }
+      }
+
+      &.fc-day-today {
+        background-color: transparent !important;
+
+        .fc-daygrid-day-frame {
+          position: relative;
+          border-radius: 12px;
+          overflow: hidden;
+
+          .fc-daygrid-day-top {
+            width: 100%;
+            min-height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            //background-color: abs.$primary-color;
+            position: relative;
+
+            a {
+              //color: #fff;
+              text-align: center;
+              font-size: 16.512px;
+              font-family: abs.$font-family;
+              text-decoration: none !important;
+            }
+          }
+
+          .fc-daygrid-day-events {
+            position: absolute;
+          }
+        }
+      }
+
+      &.fc-day-past {
+        pointer-events: none !important;
+
+        .fc-daygrid-day-frame {
+          .fc-daygrid-day-top {
+            background-color: #edf8fd;
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+  }
+}
+
+.calendar-mobile {
+  
+  width: 100%;
+
+
+  .some-heading{
+    color: abs.$text-primary;
+    font-family: abs.$font-family;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%; /* 19.2px */
+    margin-bottom: 24px;
+  }
+
+  .items{
+    display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  padding-bottom: 13px;
+    .dayitem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    background: #f4f5f8;
+    padding: 5px 8px;
+    align-items: baseline;
+    cursor: pointer;
+    margin: 0px 5px;
+    min-width: fit-content !important;
+
+    &:first-child {
+      margin-left: 0px;
+    }
+
+    &.active{
+      background: abs.$primary-color;
+
+      .title {
+        color: #fff;
+      }
+      .subtitle {
+        color: #fff;
+      }
+    }
+
+    .title {
+      color: #847e7e;
+      font-family: abs.$font-family;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 160%; /* 19.2px */
+    }
+    .subtitle {
+      color: #b7bfcc;
+      font-family: abs.$font-family;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 160%;
+    }
+  }
+  }
+  
+}

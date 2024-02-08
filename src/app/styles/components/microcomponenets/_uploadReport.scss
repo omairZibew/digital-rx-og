@@ -1,0 +1,144 @@
+@use "../../abstracts" as abs;
+
+
+
+
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  .file-upload-dropzone {
+    background-color: #fff !important;
+    border: 0.8px dashed #1089ff;
+    padding: 50px 20px;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+
+    @include abs.respond-to(mobile) {
+      padding: 21px 20px;
+    }
+
+    .labelftc {
+      span {
+
+        color: abs.$text-dark;
+        font-family: abs.$font-family;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%;
+        /* 21px */
+        text-decoration: none;
+
+        span {
+          color: abs.$text-gray;
+          font-family: abs.$font-family;
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%;
+          /* 21px */
+        }
+      }
+    }
+
+
+  }
+
+
+  .cust-uploader-list {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    padding: 0px !important;
+    overflow: hidden;
+    margin-top: 15px;
+    flex-wrap: wrap;
+
+    @include abs.respond-to(mobile) {
+      &.row {
+        &>.col-12 {
+          padding: 0px;
+        }
+      }
+    }
+
+
+    .cust-item {
+
+      overflow: hidden;
+      height: 70px;
+      display: flex;
+      align-items: center;
+
+      margin: 5px 0px;
+
+      border-radius: 5px;
+      border: 0.5px solid var(--Text-color-4, #B7BFCC);
+
+
+      &>.row {
+        width: 100%;
+        margin: 0px !important;
+
+        .file_name {
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        
+        .name{
+          overflow: hidden;
+          font-size: .75em;
+          line-height: 1.2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          color: abs.$text-dark;
+          width: 100%;
+          text-align: left;
+          text-decoration: none;
+
+          span {
+            color: abs.$text-gray;
+            font-size: 8px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            /* 12px */
+          }
+        }
+      }
+
+      .titlef {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 39px;
+
+
+        .button-right {
+          width: 28px !important;
+          min-width: 28px !important;
+        }
+      }
+
+
+      .del-btn {
+        cursor: pointer;
+      }
+
+
+
+
+    }
+  }
+
+}

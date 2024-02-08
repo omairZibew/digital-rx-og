@@ -1,0 +1,85 @@
+@use "../../abstracts" as abs;
+
+.imageGallary {
+
+  display: flex;
+  flex-wrap: wrap;
+  grid-row-gap: 20px;
+
+  .gal-card {
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      aspect-ratio: 16 / 11; 
+    }
+
+    @include abs.respond-to(mobile) {
+      width: 246px;
+    }
+  }
+
+  .swiper-pagination {
+    display: none;
+  }
+}
+
+.mySwiper {
+  .swiper-wrapper {
+    .gal-card {
+      margin-right: 15px;
+
+      img {
+        width: 100% !important;
+        border-radius: 12px;
+
+        @include abs.respond-to(mobile) {
+          aspect-ratio: 16 / 11; 
+        }
+      }
+
+      @include abs.respond-to(mobile) {
+        width: 246px;
+      }
+    }
+  }
+}
+
+
+.img-gal {
+  height: 0px !important;
+  width: 0px !important;
+  visibility: hidden !important;
+  overflow: hidden !important;
+
+
+}
+
+.image-gallery.fullscreen-modal {
+  background: #00000000 !important;
+
+  .image-gallery-content.fullscreen {
+    background: #000000a3 !important;
+
+    @include abs.respond-to(mobile) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100% !important;
+    }
+
+    .image-gallery-fullscreen-button,
+    .image-gallery-play-button {
+      top: 0 !important;
+      bottom: unset !important;
+    }
+
+    .image-gallery-play-button {
+      left: unset !important;
+      right: 68px !important;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@use "../../abstracts" as abs;
+
+.updateProfile {
+  .MuiPaper-root.MuiDrawer-paper {
+    overflow: hidden;
+    padding: 50px 50px;
+    width: 460px;
+    height: 100vh;
+    border-radius: 12px;
+    max-height: 100vh;
+
+    @include abs.respond-to(mobile) {
+      width: 100vw;
+      padding: 10px;
+    }
+
+    .head {
+      color: abs.$primary-color;
+      font-size: 18px;
+      font-family: abs.$font-family;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 30px;
+    }
+    .text-1 {
+      font-family: abs.$font-family;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      color: abs.$text-primary;
+    }
+
+    .camera-in {
+      width: 120px;
+      height: 120px;
+      margin: 20px 0px;
+
+      img {
+        width: 100%;
+      }
+      label {
+        img {
+          width: 70%;
+        }
+      }
+    }
+  }
+}

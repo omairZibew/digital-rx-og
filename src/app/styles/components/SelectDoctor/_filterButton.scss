@@ -1,0 +1,23 @@
+@use "../../abstracts" as abs;
+
+.filter-sub {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    margin: 20px;
+    border-top: 1px solid abs.$text-gray;
+
+    button {
+        padding: 10px 20px;
+        width: 100%;
+        gap: 5px;
+
+        img {
+            width: 20px;
+
+        }
+    }
+}

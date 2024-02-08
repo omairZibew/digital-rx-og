@@ -1,0 +1,102 @@
+@use "../../abstracts" as abs;
+
+
+.pop_button{
+    display: none !important;
+
+    @include abs.respond-to(mobile) {
+        display: none;
+    }
+    
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 10;
+
+    button{
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        padding: 10px 15px;
+    }
+}
+
+.msgPop {
+    width: 450px;
+    position: fixed;
+    bottom: 65px;
+    right: 15px;
+    z-index: 1;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    transform: scaleY(0) scaleX(0) ; 
+    transform-origin: right bottom;
+    z-index: 10;
+
+    &.visible {
+        transform: scaleY(1) scaleX(1) ; 
+    }
+
+    @include abs.respond-to(mobile) {
+        display: none;
+    }
+
+    
+
+
+    .header {
+        background: white;
+        border-radius: 12px;
+        padding: 15px;
+        position: relative;
+
+        .cancle {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            cursor: pointer;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 600;
+            padding: 0px 0px 10px 0px;
+            display: block;
+        }
+
+        .header_top {
+            display: flex;
+            gap: 10px;
+            font-family: abs.$font-family;
+            font-style: normal;
+            padding: 15px;
+            background-color: abs.$sec-5;
+            border-radius: 12px;
+
+            .img {
+                img {
+                    width: 120px;
+                }
+            }
+
+            .header_text {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                p {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+
+                .btnr {
+                    display: flex;
+                    gap: 5px;
+                    font-size: 15px !important;
+                    padding: 10px 20px;
+                }
+            }
+        }
+
+    }
+}

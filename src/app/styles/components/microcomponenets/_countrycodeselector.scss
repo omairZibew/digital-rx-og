@@ -1,0 +1,37 @@
+@use "../../abstracts" as abs;
+
+.countryCOdeparent {
+  display: flex;
+  align-items: center;
+  .phone-tf {
+    width: 20px;
+    .MuiInputBase-root.MuiInput-root {
+      display: flex;
+      //flex-direction: row-reverse;
+      .MuiInputBase-input.MuiInput-input {
+        position: relative;
+        right: -27px;
+        color: abs.$text-dark;
+        font-family: abs.$font-family;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        padding-right: 10px;
+        top: 0.28px;
+        min-width: 49px !important;
+      }
+      &::before {
+        display: none;
+      }
+      &::after {
+        display: none;
+      }
+
+      .MuiAutocomplete-endAdornment {
+        top: 20%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

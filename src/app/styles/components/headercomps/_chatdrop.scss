@@ -1,0 +1,245 @@
+@use "../../abstracts" as abs;
+
+
+.chatDrop-parent {
+    display: grid;
+    display: none !important;
+    width: 40px;
+    height: 48px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 20px;
+    align-items: center;
+
+    @include abs.respond-to(mobile) {
+        width: 40px;
+        grid-template-columns: 100%;
+        grid-template-areas: "usrimg";
+        margin-right: 10px;
+    }
+
+    .chatDrop-menu {
+        position: absolute;
+        background: #ffffff;
+        box-shadow: 0px 15px 30px rgba(38, 48, 119, 0.08);
+        border-radius: 12px;
+        overflow: hidden;
+        top: 100%;
+        width: 100%;
+        margin-top: 18px;
+        z-index: 3;
+        min-width: 450px;
+        padding: 15px;
+        left: 50%;
+        transform: translate(-50%);
+
+        @include abs.respond-to(mobile) {
+            // display: none;
+            min-width: 310px;
+            right: 0;
+            margin-top: 10px;
+        }
+
+        .header {
+            .title {
+                font-size: 18px;
+                font-weight: 600;
+                padding: 0px 0px 10px 0px;
+                display: block;
+            }
+
+            .header_top {
+                display: flex;
+                gap: 10px;
+                font-family: abs.$font-family;
+                font-style: normal;
+                padding: 15px;
+                background-color: abs.$sec-5;
+                border-radius: 12px;
+
+                .img {
+                    img {
+                        width: 120px;
+                    }
+                }
+
+                .header_text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    p {
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+
+                    button {
+                        display: flex;
+                        gap: 5px;
+                        font-size: 15px !important;
+                        padding: 10px 20px;
+                    }
+                }
+            }
+
+        }
+
+        .msg_list {
+
+            max-height: 300px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+
+            .title {
+                font-size: 16px;
+                font-weight: 600;
+                color: abs.$primary-color;
+                padding: 10px 0;
+                display: block;
+            }
+
+            .massage_box {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                .massage {
+                    display: flex;
+                    gap: 10px;
+                    justify-content: space-between;
+                    font-size: 14px;
+                    align-items: center;
+                    padding: 10px;
+                    border-radius: 12px;
+                    transition: all 0.3s ease-in-out;
+
+
+                    .msg {
+                        display: flex;
+                        gap: 10px;
+                        // justify-content: space-between;
+
+                        .img {
+                            img {
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 50%;
+                            }
+                        }
+
+                        .msg_text {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+
+                            p {
+                                font-size: 14px;
+                                font-weight: 600;
+                                margin: 0;
+                            }
+
+                            .doc_name {
+                                font-size: 16px;
+                                font-weight: 600;
+                            }
+
+                            .last_msg {
+                                font-size: 16px;
+                                font-weight: 400;
+                                color: abs.$text-ash;
+                            }
+
+                            .msg_time {
+                                font-size: 12px;
+                                font-weight: 400;
+                                color: abs.$text-ash;
+                            }
+                        }
+
+                    }
+
+                    .indicat_msg {
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                        }
+                    }
+
+
+                    &.active {
+                        background: abs.$sec-5;
+                        // border-radius: 12px;
+
+                        .msg {
+                            .msg_text {
+                                .last_msg {
+                                    font-size: 16px;
+                                    font-weight: 400;
+                                    color: abs.$secondary-color;
+                                }
+                            }
+
+                        }
+                    }
+
+                    &:hover {
+                        background: abs.$sec-5;
+                        border-radius: 12px;
+                    }
+                }
+            }
+
+
+
+            .massage_btn {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                margin: 10px;
+                gap: 10px;
+
+                img {
+                    max-width: 170px;
+                }
+
+                span {
+                    font-size: 22px;
+                }
+
+                button {
+                    display: flex;
+                    gap: 5px;
+                    font-size: 12px !important;
+                    // padding: 15px 20px;
+
+                    // border: 2px solid abs.$primary-color;
+                }
+
+            }
+
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: abs.$secondary-color;
+                border-radius: 15px;
+                border: 1px solid transparent;
+                background-clip: content-box;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: abs.$secondary-color;
+            }
+
+
+        }
+    }
+}

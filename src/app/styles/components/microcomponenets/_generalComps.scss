@@ -1,0 +1,63 @@
+@use "../../abstracts" as abs;
+
+.section-pill {
+  font-family: abs.$font-family;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27px;
+
+  /* Primary */
+
+  // color: abs.$primary-color;
+  color: #242424;
+  background: abs.$back2-color;
+  border-radius: 50px;
+  padding: 8px 12px;
+  margin-top: 0px;
+  width: fit-content;
+  display: block;
+
+  @include abs.respond-to(mobile) {
+    width: fit-content;
+    height: 35px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &.section-pill-invert {
+    // color: abs.$primary-color;
+    color: #242424;
+    background: #ffffff;
+  }
+}
+
+.section-title {
+  font-family: abs.$font-family;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  /* identical to box height, or 48px */
+
+  display: flex;
+  align-items: center;
+
+  /* Primary */
+
+  margin-top: 10px;
+  margin-bottom: 32px;
+
+  @include abs.respond-to(mobile) {
+    font-size: 20px;
+    line-height: 120%;
+
+    margin-top: 11px;
+    margin-bottom: 13px;
+  }
+
+  &.section-title-primary {
+    // color: abs.$primary-color;
+    color: abs.$text-primary;
+  }
+}

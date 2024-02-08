@@ -1,0 +1,37 @@
+@use "../abstracts" as abs;
+
+.reportsmain {
+  border-radius: 8px;
+  background: #fff;
+  padding: 39px;
+  margin: 12px 0px 24px 0px;
+
+  @include abs.respond-to(mobile) {
+    padding: 15px 12px;
+  }
+
+  .innnercontainer {
+    margin-bottom: 29px;
+    .title {
+      color: #263077;
+      font-family: abs.$font-family;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 20px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      color: abs.$text-blue;
+      font-family: abs.$font-family;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    .main {
+      margin-top: 10px;
+    }
+  }
+}

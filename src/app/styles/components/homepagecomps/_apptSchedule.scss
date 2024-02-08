@@ -1,0 +1,125 @@
+@use "../../abstracts" as abs;
+
+.app-sch-card-parent {
+  display: flex;
+
+  .app-sch-card {
+    border-radius: 36px;
+    padding: 34px 40px;
+    flex-grow: 1;
+    // width: 536px !important;
+    height: 363px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+
+    @include abs.respond-to(mobile) {
+      width: 293px !important;
+      height: 200px !important;
+      padding: 28px 21px;
+      border-radius: 17.3487px;
+    }
+
+    .header {
+      font-family: abs.$font-family;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 120%;
+      // color: abs.$text-white;
+      color: #FFFFFF;
+      width: 60%;
+
+      @include abs.respond-to(mobile) {
+        font-size: 23px;
+      }
+    }
+
+    .slots {
+      flex-grow: 1;
+      margin-top: 24px;
+      z-index: 1;
+      // color: abs.$primary-color;
+      color: #263077;
+      font-size: 14px;
+      font-family: abs.$font-family;
+      font-weight: 500;
+      line-height: 150%;
+      width: 60%;
+      @include abs.respond-to(mobile) {
+        margin: 10px 0px;
+        font-size: 11px;
+      }
+    }
+
+    .btnr-primary{
+      background-color: #ffffff;
+      border: none;
+      color: abs.$primary-color;
+    }
+
+    .backimg {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+    }
+
+    &.type1 {
+      background-color: abs.$sec-8;
+
+      .backimg {
+        @include abs.respond-to(largeDesktop) {
+          width: 294px;
+        }
+
+        @include abs.respond-to(extraLargeDesktop) {
+          width: 294px;
+        }
+
+        @include abs.respond-to(mobile) {
+          width: 168px;
+        }
+      }
+    }
+    &.type2 {
+      background-color: abs.$sec-9;
+
+      .backimg {
+        width: 440px;
+
+        @include abs.respond-to(largeDesktop) {
+          width: 398px;
+        }
+
+        @include abs.respond-to(extraLargeDesktop) {
+          width: 440px;
+        }
+
+        @include abs.respond-to(mobile) {
+          width: 200px;
+        }
+      }
+    }
+
+    &:first-child {
+      //margin-right: 25px;
+      @include abs.respond-to(mobile) {
+        margin-right: 0px;
+      }
+    }
+
+    &:last-child {
+      //margin-left: 25px;
+      @include abs.respond-to(mobile) {
+        margin-left: 0px;
+      }
+    }
+
+    .btnr.btnr-primary {
+      z-index: 1;
+      position: relative;
+    }
+  }
+}

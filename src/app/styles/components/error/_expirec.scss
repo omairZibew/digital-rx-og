@@ -1,0 +1,101 @@
+@use '../../abstracts' as abs;
+
+.main_expired {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.212);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .expired {
+        background-color: #fff;
+        width: 680px;
+        max-width: 680px;
+        margin: auto;
+        padding: 30px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin: auto 20px;
+
+        @include abs.respond-to(mobile) {}
+
+        .upper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+
+            h2 {
+                text-align: center;
+                font-size: 24px;
+                color: abs.$warning-color;
+
+                @include abs.respond-to(mobile) {
+                    font-size: 22px;
+                }
+            }
+        }
+
+        .contect {
+            background-color: abs.$card-background-color;
+            padding: 20px;
+            border-radius: 12px;
+            width: 100%;
+
+            .subCon {
+                max-width: 300px;
+                margin: auto;
+
+                p {
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 21.86px;
+
+                    @include abs.respond-to(mobile) {
+                        font-size: 14px;
+                    }
+                }
+
+                .contect_info {
+                    display: flex;
+                    gap: 10px;
+                    flex-direction: column;
+
+                    .info {
+                        display: flex;
+                        gap: 6px;
+                        align-items: center;
+
+                        svg {
+                            width: 20px;
+                            height: 20px;
+                        }
+
+                        span {
+                            font-weight: 600;
+                            font-size: 16px;
+                            color: abs.$primary-color;
+                        }
+
+                        @include abs.respond-to(mobile) {
+                            svg {
+                                width: 18px;
+                                height: 18px;
+                            }
+
+                            span {
+                                font-size: 14px
+                            }
+
+                            ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
