@@ -1,9 +1,9 @@
 import Image from "next/image";
-// import styles from "./styles/home.module.scss";
+import styles from "./styles/pages/home.module.scss";
 
 export default function Home() {
   return (
-    <div className="omair">
+    <div className={styles.omair}>
 asdsadsad
     </div>
   );
