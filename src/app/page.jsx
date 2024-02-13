@@ -1,5 +1,5 @@
 "use client";
-import ReduxProvider from "../lib/provider";
+import ReduxProvider from "@/lib/provider";
 import AuthUpdater from "./components/AuthUpdate";
 import AuthViewer from "./components/AuthViewer";
 export default function Home() {
