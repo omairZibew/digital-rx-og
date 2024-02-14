@@ -1,6 +1,6 @@
 import React from "react";
-import { setAuthState } from "@/lib/reducers/authSlice";
-import { useAppDispatch } from "@/lib/store";
+import { setAuthState } from "../lib/reducers/authSlice";
+import { useAppDispatch } from "../lib/store";
 
 const AuthUpdater = () => {
   const dispatch = useAppDispatch();
